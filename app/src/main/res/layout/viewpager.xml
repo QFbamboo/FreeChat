@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_above="@+id/page1"
+            android:background="#dd00ff00" />
+
+        <TextView
+            android:id="@+id/page1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:padding="15dp"
+            android:paddingLeft="10dp"
+            android:text="聊天"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/page1"
+            android:background="#dd00ff00" />
+
+        < TextView
+            android:id="@+id/page2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:padding="15dp"
+            android:text="消息"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/page2"
+            android:background="#dd00ff00" />
+
+        < TextView
+            android:id="@+id/page3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:padding="15dp"
+            android:text="用户"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>
