@@ -73,15 +73,19 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/button_round"
         android:onClick="onClick"
-        android:text="登录" />
+        android:padding="10dp"
+        android:text="登录"
+        android:textColor="#ffff" />
 
     <Button
-        android:id="@+id/btnregister"
+        android:id="@+id/main_btnregister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_round"
         android:onClick="onClick"
-        android:text="注册" />
+        android:padding="10dp"
+        android:text="注册"
+        android:textColor="#ffff" />
 </LinearLayout>

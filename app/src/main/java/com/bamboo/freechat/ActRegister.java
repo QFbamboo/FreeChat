@@ -12,7 +12,7 @@ import com.bamboo.base.ViewInject;
  * Created by bamboo on 16-5-30.
  */
 @ContentView(R.layout.register)
-public class ActRegister extends BaseActivity{
+public class ActRegister extends BaseActivity {
 
     @ViewInject(R.id.account)
     private EditText account;
@@ -20,17 +20,17 @@ public class ActRegister extends BaseActivity{
     private EditText passwd;
     @ViewInject(R.id.surePasswd)
     private EditText surePasswd;
-    @ViewInject(R.id.register)
-    private Button register;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String accountName=account.getText().toString().trim();
-        String password=passwd.getText().toString().trim();
-        String SurePassword=surePasswd.getText().toString().trim();
-        if (password!=SurePassword){
-
-        }
+//        String accountName = account.getText().toString().trim();
+//        String password = passwd.getText().toString().trim();
+//        String SurePassword = surePasswd.getText().toString().trim();
+//        if (password != SurePassword) {
+//
+//        }
     }
 }

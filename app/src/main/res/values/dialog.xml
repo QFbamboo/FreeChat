@@ -1,0 +1,37 @@
+<resources>
+    <color name="transparent">#0000</color>
+    <color name="storke_frame">#888</color>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Light">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="SingleChoiceDialogFrame" parent="AppTheme">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/dialog_frame</item>
+    </style>
+
+    <!--grey line-->
+    <style name="SingleChoiceDialogDivider" parent="AppTheme">
+        <item name="android:background">#d1d1d1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2px</item>
+    </style>
+
+    <style name="DialogVerticalDivider" parent="AppTheme">
+        <item name="android:background">#d1d1d1</item>
+        <item name="android:layout_width">2px</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <style name="DialogButton" parent="AppTheme">
+        <item name="android:background">@drawable/default_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">#1e90ff</item>
+    </style>
+</resources>

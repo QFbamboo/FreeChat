@@ -97,12 +97,14 @@
         android:padding="5dp" />
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/btnregister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_round"
         android:onClick="onClick"
+        android:padding="10dp"
+        android:textColor="#ffff"
         android:text="注册" />
 </LinearLayout>
