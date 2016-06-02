@@ -38,4 +38,8 @@ public class SPUtil {
         String value = spUtil.getString(key, "");
         return value;
     }
+
+    public static void clearData() {
+        spUtil.edit().clear().commit();
+    }
 }

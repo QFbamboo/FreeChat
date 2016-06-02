@@ -11,16 +11,16 @@ import android.widget.TextView;
 /**
  * Created by bamboo on 16-5-30.
  */
-public class MsgTitleLayout extends LinearLayout implements View.OnClickListener {
+public class ActBackTitle extends LinearLayout implements View.OnClickListener {
 
     private TextView back;
     private TextView title_text;
 
-    public MsgTitleLayout(Context context) {
+    public ActBackTitle(Context context) {
         super(context, null);
     }
 
-    public MsgTitleLayout(Context context, AttributeSet attrs) {
+    public ActBackTitle(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.msg_title, this, true);
         back = (TextView) findViewById(R.id.back);

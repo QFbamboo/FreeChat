@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.bamboo.base.BaseActivity;
 import com.bamboo.base.ContentView;
 import com.bamboo.base.ViewInject;
+import com.bamboo.bean.User;
 import com.bamboo.common.Dao;
 import com.bamboo.common.Tag;
 import com.bamboo.util.IMUtil;
@@ -29,25 +30,30 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        DialogView.showDialog(this, " ", new DialogView.OnClickListener() {
-//            @Override
-//            public void onClick(DialogView dialogView) {
-//
-//            }
-//        });
-        if (!SPUtil.getDate("userid").isEmpty()) {
+        //判断存入的用户ID信息是否为空，如果不是，则证明之登录，则直接显示聊天界面
+        if (SPUtil.getDate("username") != "") {
             startActivity(new Intent(MainActivity.this, ActContent.class));
             finish();
         }
     }
 
-    Handler userInfoHandler = new Handler() {
+    //接收用户登录返回的Handler
+    private final Handler userInfoHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == Tag.SUCCESS) {
+                User user = (User) msg.obj;
+                SPUtil.setUser(user);//把用户信息保存到本地
 
+                //登录成功之后跳转到聊天界面
                 startActivity(new Intent(MainActivity.this, ActContent.class));
+            } else if (msg.what == Tag.FAILURE) {
+                Toast.makeText(MainActivity.this, "用户名或密码错误",
+                        Toast.LENGTH_SHORT).show();
+            }else if(msg.what==Tag.JUDGE){
+                Toast.makeText(MainActivity.this, "请检查网络！",
+                        Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -61,19 +67,19 @@ public class MainActivity extends BaseActivity {
                 if (userId.isEmpty() || password.isEmpty()) {
                     Toast.makeText(MainActivity.this,
                             "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
-                }
-                IMUtil.login(userId, password, new Handler() {
-                    @Override
-                    public void handleMessage(Message msg) {
-                        if (msg.what == 1) {
-                            Dao.getUserInfo(userId, userId, userInfoHandler);
-//                            startActivity(new Intent(MainActivity.this, ActContent.class));
-                        } else if (msg.what == 0) {
-                            Toast.makeText(MainActivity.this, "用户名或密码错误",
-                                    Toast.LENGTH_SHORT).show();
+                } else {
+                    IMUtil.login(userId, password, new Handler() {
+                        @Override
+                        public void handleMessage(Message msg) {
+                            if (msg.what == Tag.SUCCESS) {
+                                Dao.getUserInfo(userId, userId, userInfoHandler);
+                            } else if (msg.what == Tag.FAILURE) {
+                                Toast.makeText(MainActivity.this, "用户名或密码错误",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
                 break;
             case R.id.main_btnregister:
                 startActivity(new Intent(this, ActRegister.class));

@@ -9,13 +9,9 @@ import com.alibaba.mobileim.YWIMKit;
 import com.alibaba.mobileim.YWLoginParam;
 import com.alibaba.mobileim.channel.event.IWxCallback;
 import com.alibaba.mobileim.contact.IYWContactService;
-import com.alibaba.mobileim.contact.YWContactManager;
 import com.alibaba.mobileim.conversation.IYWConversationListener;
 import com.alibaba.mobileim.conversation.IYWConversationService;
-import com.alibaba.wxlib.util.SysUtil;
-import com.bamboo.base.MyApplication;
 import com.bamboo.common.Tag;
-import com.umeng.openim.OpenIMAgent;
 
 /**
  * Created by caojiang on 2/24/2016.
@@ -112,16 +108,16 @@ public class IMUtil {
         });
     }
 
-    public static final void loginOut(final Handler handler) {
+    public static final void logOut(final Handler handler) {
         mLoginService.logout(new IWxCallback() {
             @Override
             public void onSuccess(Object... objects) {
-                handler.obtainMessage(Tag.OUT_SUCCESS).sendToTarget();
+                handler.obtainMessage(Tag.SUCCESS).sendToTarget();
             }
 
             @Override
             public void onError(int i, String s) {
-                handler.obtainMessage(Tag.OUT_FAILURE).sendToTarget();
+                handler.obtainMessage(Tag.FAILURE).sendToTarget();
             }
 
             @Override

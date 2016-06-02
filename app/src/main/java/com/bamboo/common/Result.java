@@ -11,11 +11,12 @@ public class Result {
     public final Object data;
 
 
-    public Result(int status, String msg) {
+    public Result(int status, String msg) throws Exception {
         this.status = status;
         this.msg = msg;
         this.data = null;
     }
+
 
     public Result(String s) throws Exception {
         JSONObject obj = new JSONObject(s);
