@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/freechat.iml" filepath="$PROJECT_DIR$/freechat.iml" />
       <module fileurl="file://$PROJECT_DIR$/openimSDK/openimSDK.iml" filepath="$PROJECT_DIR$/openimSDK/openimSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipe/swipe.iml" filepath="$PROJECT_DIR$/swipe/swipe.iml" />
     </modules>
   </component>
 </project>
