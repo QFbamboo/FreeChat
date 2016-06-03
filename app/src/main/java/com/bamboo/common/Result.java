@@ -1,6 +1,12 @@
 package com.bamboo.common;
 
+import android.os.Handler;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by bamboo on 16-6-1.
@@ -27,6 +33,35 @@ public class Result {
 
     public String getMsg() {
         return msg;
+    }
+
+    public static void getJsonMessage(String jsonText, final Handler handler) {
+        List<Message> list = new ArrayList<Message>();
+        try {
+            JSONObject jsonObject = new JSONObject(jsonText);
+            int status = jsonObject.getInt("status");
+            if (status == 1) {
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+                for (int j = 0; j < jsonArray.length(); j++) {
+                    JSONObject jsonObj = jsonArray.getJSONObject(j);
+                    int fromuserid = jsonObj.getInt("fromuserid");
+                    int flag = jsonObj.getInt("flag");
+                    String fromusername = jsonObj.getString("fromusername");
+                    int id = jsonObj.getInt("id");
+                    String fromavatar = jsonObj.getString("fromavatar");
+                    long add_time = jsonObj.getLong("add_time");
+                    Message message = new Message(fromuserid, flag, fromusername, id,
+                            fromavatar, add_time);
+                    list.add(message);
+                    handler.obtainMessage(Tag.SUCCESS, list).sendToTarget();
+                }
+            } else {
+                handler.obtainMessage(Tag.FAILURE).sendToTarget();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            handler.obtainMessage(Tag.FAILURE).sendToTarget();
+        }
     }
 
 

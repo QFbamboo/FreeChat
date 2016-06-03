@@ -45,13 +45,12 @@ public class MainActivity extends BaseActivity {
             if (msg.what == Tag.SUCCESS) {
                 User user = (User) msg.obj;
                 SPUtil.setUser(user);//把用户信息保存到本地
-
                 //登录成功之后跳转到聊天界面
                 startActivity(new Intent(MainActivity.this, ActContent.class));
             } else if (msg.what == Tag.FAILURE) {
                 Toast.makeText(MainActivity.this, "用户名或密码错误",
                         Toast.LENGTH_SHORT).show();
-            }else if(msg.what==Tag.JUDGE){
+            } else if (msg.what == Tag.OTHER) {
                 Toast.makeText(MainActivity.this, "请检查网络！",
                         Toast.LENGTH_SHORT).show();
             }
@@ -74,7 +73,7 @@ public class MainActivity extends BaseActivity {
                             if (msg.what == Tag.SUCCESS) {
                                 Dao.getUserInfo(userId, userId, userInfoHandler);
                             } else if (msg.what == Tag.FAILURE) {
-                                Toast.makeText(MainActivity.this, "用户名或密码错误",
+                                Toast.makeText(MainActivity.this, "请检查有盟",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }

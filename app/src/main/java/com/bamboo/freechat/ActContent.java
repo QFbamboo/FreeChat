@@ -40,7 +40,7 @@ public class ActContent extends BaseActivity {
     //初始化viewPager
     public void InitViewPager() {
         fragmentList.add(new ActMessageFragment().newIntence(arr1));
-        fragmentList.add(new ActMessageFragment().newIntence(arr2));
+        fragmentList.add(new FragMessage());
         fragmentList.add(new FragUser());
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         MyPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {

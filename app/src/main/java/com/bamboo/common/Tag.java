@@ -6,5 +6,5 @@ package com.bamboo.common;
 public class Tag {
     public static final int SUCCESS = 1;
     public static final int FAILURE = 0;
-    public static final int JUDGE = 2;
+    public static final int OTHER = 2;
 }

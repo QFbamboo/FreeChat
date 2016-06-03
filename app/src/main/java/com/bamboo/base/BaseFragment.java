@@ -10,11 +10,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import java.lang.reflect.Field;
 
 
-public class BaseFragment extends Fragment implements View.OnClickListener {
+public class BaseFragment extends Fragment implements View.OnClickListener,AdapterView.OnItemClickListener {
     protected View rootView;
 
     @Override
@@ -61,4 +62,8 @@ public class BaseFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        }
 }

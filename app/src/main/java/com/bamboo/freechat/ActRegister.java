@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -68,7 +67,7 @@ public class ActRegister extends BaseActivity {
             } else if (msg.what == Tag.FAILURE) {
                 Toast.makeText(ActRegister.this, "用户已存在",
                         Toast.LENGTH_LONG).show();
-            } else if (msg.what == Tag.JUDGE) {
+            } else if (msg.what == Tag.OTHER) {
                 Toast.makeText(ActRegister.this, "请检查网络",
                         Toast.LENGTH_LONG).show();
             }
