@@ -48,8 +48,8 @@ public class FragUser extends BaseFragment {
         public void handleMessage(Message msg) {
             if (msg.what == Tag.SUCCESS) {
                 SPUtil.clearData();
-                ((Activity) getContext()).finish();
-                Toast.makeText(getContext(), "已退出", Toast.LENGTH_SHORT).show();
+                ((Activity)getActivity()).finish();
+                Toast.makeText(getActivity(), "已退出", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getActivity(), MainActivity.class));
             }
         }

@@ -159,21 +159,21 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnReadCount(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnReadCount</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnReadCount(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnReadCount</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                        <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block">获取单条@消息的已读未读数</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnreadList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnreadList</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnreadList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnreadList</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                       <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnreadTribeMemberList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnreadTribeMemberList</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnreadTribeMemberList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnreadTribeMemberList</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                  <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block">获取某条@消息的已读未读列表</div>
 </td>
@@ -296,7 +296,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#sendAtMsgReadAck(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">sendAtMsgReadAck</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#sendAtMsgReadAck(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">sendAtMsgReadAck</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                 <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block">发送单条消息的已读确认</div>
 </td>
@@ -330,7 +330,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#updateAtMsgRead(com.alibaba.mobileim.conversation.YWMessage, java.lang.String)">updateAtMsgRead</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWConversation.html#updateAtMsgRead(com.alibaba.mobileim.conversation.YWMessage, java.lang.String)">updateAtMsgRead</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                java.lang.String&nbsp;mUserId)</code>
 <div class="block">把会话中的单条at消息置为已读</div>
 </td>
@@ -555,10 +555,10 @@ public abstract&nbsp;long&nbsp;getLatestTime()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>sendAtMsgReadAck</h4>
-<pre>public abstract&nbsp;void&nbsp;sendAtMsgReadAck(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<pre>public abstract&nbsp;void&nbsp;sendAtMsgReadAck(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                     <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</pre>
 <div class="block">发送单条消息的已读确认</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 表示一条@消息</dd><dd><code>callback</code> - 执行结果回调，执行结果回调，如果成功会回调onSuccess()，失败则回调onError()</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 表示一条@消息</dd><dd><code>callback</code> - 执行结果回调，执行结果回调，如果成功会回调onSuccess()，失败则回调onError()</dd></dl>
 </li>
 </ul>
 <a name="sendAtMsgReadAckBatch(java.util.List, com.alibaba.mobileim.channel.event.IWxCallback)">
@@ -619,10 +619,10 @@ public abstract&nbsp;long&nbsp;getLatestTime()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>updateAtMsgRead</h4>
-<pre>public abstract&nbsp;void&nbsp;updateAtMsgRead(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<pre>public abstract&nbsp;void&nbsp;updateAtMsgRead(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                    java.lang.String&nbsp;mUserId)</pre>
 <div class="block">把会话中的单条at消息置为已读</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 标识这条@消息</dd><dd><code>mUserId</code> - 当前登录用户的ID</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 标识这条@消息</dd><dd><code>mUserId</code> - 当前登录用户的ID</dd></dl>
 </li>
 </ul>
 <a name="updateAtMsgsRead(java.util.List, java.lang.String)">
@@ -655,10 +655,10 @@ public abstract&nbsp;long&nbsp;getLatestTime()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAtMsgReadUnReadCount</h4>
-<pre>public abstract&nbsp;void&nbsp;getAtMsgReadUnReadCount(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<pre>public abstract&nbsp;void&nbsp;getAtMsgReadUnReadCount(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                            <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</pre>
 <div class="block">获取单条@消息的已读未读数</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - </dd><dd><code>callback</code> - 执行完成后的回调，成功后该@消息的已读未读数会被设置</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - </dd><dd><code>callback</code> - 执行完成后的回调，成功后该@消息的已读未读数会被设置</dd></dl>
 </li>
 </ul>
 <a name="getAtMsgReadUnreadList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">
@@ -667,11 +667,11 @@ public abstract&nbsp;long&nbsp;getLatestTime()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAtMsgReadUnreadList</h4>
-<pre>public abstract&nbsp;void&nbsp;getAtMsgReadUnreadList(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<pre>public abstract&nbsp;void&nbsp;getAtMsgReadUnreadList(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                           <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i></i></div>
 <div class="block">获取某条@消息的已读未读列表</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 代表某条@消息</dd><dd><code>callback</code> - 执行完成后的回调，结果为[readList,unreadList]->[List<String>,List<String>]</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 代表某条@消息</dd><dd><code>callback</code> - 执行完成后的回调，结果为[readList,unreadList]->[List<String>,List<String>]</dd></dl>
 </li>
 </ul>
 <a name="getAtMsgReadUnreadTribeMemberList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">
@@ -680,10 +680,10 @@ public abstract&nbsp;long&nbsp;getLatestTime()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAtMsgReadUnreadTribeMemberList</h4>
-<pre>public abstract&nbsp;void&nbsp;getAtMsgReadUnreadTribeMemberList(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<pre>public abstract&nbsp;void&nbsp;getAtMsgReadUnreadTribeMemberList(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                      <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</pre>
 <div class="block">获取某条@消息的已读未读列表</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 代表某条@消息</dd><dd><code>callback</code> - 执行完成后的回调，结果为[readList,unreadList]->[List<<code>YWTribeMember</code>>,List<<code>YWTribeMember</code>>]</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 代表某条@消息</dd><dd><code>callback</code> - 执行完成后的回调，结果为[readList,unreadList]->[List<<code>YWTribeMember</code>>,List<<code>YWTribeMember</code>>]</dd></dl>
 </li>
 </ul>
 <a name="getLatestMessageAuthorId()">

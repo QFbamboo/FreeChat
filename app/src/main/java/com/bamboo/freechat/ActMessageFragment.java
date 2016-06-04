@@ -16,7 +16,7 @@ import com.bamboo.base.ViewInject;
 /**
  * Created by bamboo on 16-5-31.
  */
-@ContentView(R.layout.guide)
+@ContentView(R.layout.frag_message)
 public class ActMessageFragment extends BaseFragment {
 
     @ViewInject(R.id.lv_content)
@@ -30,11 +30,6 @@ public class ActMessageFragment extends BaseFragment {
         return newFragment;
     }
 
-    @Override
-    public Context getContext() {
-        return super.getContext();
-//        return context;
-    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -49,7 +44,7 @@ public class ActMessageFragment extends BaseFragment {
 //        List<String> list = new ArrayList<String>();
 //        getActivity().getApplication();
 
-        MyAdapter<String> adapter = new MyAdapter<String>(getContext(), arr) {
+        MyAdapter<String> adapter = new MyAdapter<String>(getActivity(), arr) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 ViewHolder holder = getHolder(getContext(),

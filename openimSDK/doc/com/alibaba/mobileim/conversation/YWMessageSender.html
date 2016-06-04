@@ -140,7 +140,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWMessageSender.html#sendMessage(com.alibaba.mobileim.conversation.YWMessage, long, com.alibaba.mobileim.channel.event.IWxCallback)">sendMessage</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWMessageSender.html#sendMessage(com.alibaba.mobileim.conversation.YWMessage, long, com.alibaba.mobileim.channel.event.IWxCallback)">sendMessage</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
            long&nbsp;timeout,
            <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block">向会话对应的聊天对象userId发送一条消息
@@ -193,13 +193,13 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>sendMessage</h4>
-<pre>public abstract&nbsp;void&nbsp;sendMessage(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<pre>public abstract&nbsp;void&nbsp;sendMessage(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                long&nbsp;timeout,
                <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</pre>
 <div class="block">向会话对应的聊天对象userId发送一条消息
  
  该方法必须在ui主线程调用</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 消息内容， 该消息内容可通过云旺SDK提供的辅助类<a href="../../../../com/alibaba/mobileim/conversation/YWMessageChannel.html" title="class in com.alibaba.mobileim.conversation"><code>YWMessageChannel</code></a>来完成创建</dd><dd><code>timeout</code> - 发送消息的超时时间， 秒为单位，推荐使用120s，即两分钟</dd><dd><code>callback</code> - 发送成功的回调</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 消息内容， 该消息内容可通过云旺SDK提供的辅助类<a href="../../../../com/alibaba/mobileim/conversation/YWMessageChannel.html" title="class in com.alibaba.mobileim.conversation"><code>YWMessageChannel</code></a>来完成创建</dd><dd><code>timeout</code> - 发送消息的超时时间， 秒为单位，推荐使用120s，即两分钟</dd><dd><code>callback</code> - 发送成功的回调</dd></dl>
 </li>
 </ul>
 </li>

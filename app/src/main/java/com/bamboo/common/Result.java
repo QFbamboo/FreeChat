@@ -36,7 +36,7 @@ public class Result {
     }
 
     public static void getJsonMessage(String jsonText, final Handler handler) {
-        List<Message> list = new ArrayList<Message>();
+        List<Msg> list = new ArrayList<Msg>();
         try {
             JSONObject jsonObject = new JSONObject(jsonText);
             int status = jsonObject.getInt("status");
@@ -50,9 +50,9 @@ public class Result {
                     int id = jsonObj.getInt("id");
                     String fromavatar = jsonObj.getString("fromavatar");
                     long add_time = jsonObj.getLong("add_time");
-                    Message message = new Message(fromuserid, flag, fromusername, id,
+                    Msg msg = new Msg(fromuserid, flag, fromusername, id,
                             fromavatar, add_time);
-                    list.add(message);
+                    list.add(msg);
                     handler.obtainMessage(Tag.SUCCESS, list).sendToTarget();
                 }
             } else {
@@ -64,6 +64,30 @@ public class Result {
         }
     }
 
+    public static void getJsonFriendlist(String s, final Handler handler) {
+        List<Friend> list = new ArrayList<Friend>();
+        try {
+            JSONObject jsonObject = new JSONObject(s);
+            int status = jsonObject.getInt("status");
+            if (status == 1) {
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObj = jsonArray.getJSONObject(i);
+                    int id = jsonObj.getInt("id");
+                    String avatar = jsonObj.getString("avatar");
+                    String username = jsonObj.getString("username");
+                    Friend friend = new Friend(id, avatar, username);
+                    list.add(friend);
+                    handler.obtainMessage(Tag.SUCCESS, list).sendToTarget();
+                }
+            } else {
+                handler.obtainMessage(Tag.FAILURE).sendToTarget();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            handler.obtainMessage(Tag.FAILURE).sendToTarget();
+        }
+    }
 
     @Override
     public String toString() {

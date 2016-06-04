@@ -9,4 +9,7 @@ public class Url {
     public static final String REGISTER = BASE_URL + "/user/registe";
     public static final String ADD_FRIEND = BASE_URL + "friend/add";
     public static final String MESSAGE_LIST = BASE_URL + "message/list";
+    public static final String FRIEND_REQUEST = BASE_URL + "friend/request";
+    public static final String FRIEND_REJECT = BASE_URL + "friend/reject";
+    public static final String FRIEND_LIST = BASE_URL + "friend/list";
 }

@@ -244,7 +244,7 @@ extends BaseAdvice</pre>
 <tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageUI.html#getImageSavePath(Fragment, com.alibaba.mobileim.conversation.YWMessage)">getImageSavePath</a></strong>(Fragment&nbsp;fragment,
-                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">自定义图片的本地保存地址</div>
 </td>
 </tr>
@@ -289,7 +289,7 @@ extends BaseAdvice</pre>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageUI.html#getMsgBackgroundResId(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage, boolean)">getMsgBackgroundResId</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                      boolean&nbsp;self)</code>
 <div class="block">设置消息气泡背景图，需要.9图</div>
 </td>
@@ -439,7 +439,7 @@ extends BaseAdvice</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageUI.html#onImagePreviewTitleButtonClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onImagePreviewTitleButtonClick</a></strong>(Fragment&nbsp;fragment,
-                              <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                              <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">自定义图片预览页面顶部titlebar右侧按钮的点击行为。</div>
 </td>
 </tr>
@@ -518,10 +518,10 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getMsgBackgroundResId</h4>
 <pre>public&nbsp;int&nbsp;getMsgBackgroundResId(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                         boolean&nbsp;self)</pre>
 <div class="block">设置消息气泡背景图，需要.9图</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 当前消息所在会话</dd><dd><code>message</code> - 需要设置背景的消息</dd><dd><code>self</code> - 是否是自己发送的消息，true：自己发送的消息， false：别人发送的消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 当前消息所在会话</dd><dd><code>msg</code> - 需要设置背景的消息</dd><dd><code>self</code> - 是否是自己发送的消息，true：自己发送的消息， false：别人发送的消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd>0: 默认背景 －1:透明背景（无背景） > 0:使用用户设置的背景图</dd></dl>
 </li>
 </ul>
@@ -624,7 +624,7 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>onImagePreviewTitleButtonClick</h4>
 <pre>public&nbsp;boolean&nbsp;onImagePreviewTitleButtonClick(Fragment&nbsp;fragment,
-                                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">自定义图片预览页面顶部titlebar右侧按钮的点击行为。</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>false: 使用默认点击事件  true：使用用户自定义的点击事件</dd></dl>
 </li>
@@ -636,9 +636,9 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getImageSavePath</h4>
 <pre>public&nbsp;java.lang.String&nbsp;getImageSavePath(Fragment&nbsp;fragment,
-                                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">自定义图片的本地保存地址</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment</dd><dd><code>message</code> - 图片消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment</dd><dd><code>msg</code> - 图片消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd>本地保存地址</dd></dl>
 </li>
 </ul>

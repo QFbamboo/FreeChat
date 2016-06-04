@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1.0'
+    compileSdkVersion 22
+    buildToolsVersion '22.0.1'
     defaultConfig {
         applicationId "com.bamboo.freechat"
         minSdkVersion 14
-        targetSdkVersion 19
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -21,10 +21,12 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:support-v4:22.2.1'
     compile files('libs/android-async-http-1.4.6.jar')
     compile files('libs/eventbus-3.0.0-beta1.jar')
     compile files('libs/universal-image-loader-1.9.3.jar')
     compile project(':openimSDK')
     compile project(':swipe')
+    compile files('libs/ormlite-android-4.48.jar')
+    compile files('libs/ormlite-core-4.48.jar')
 }

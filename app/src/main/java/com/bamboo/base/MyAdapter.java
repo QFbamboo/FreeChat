@@ -34,6 +34,11 @@ public abstract class MyAdapter<T> extends BaseAdapter {
         this.list = list;
         this.type = TYPE.LIST;
     }
+    //设置传输过来的数据
+    public void setData(List<T> list) {
+        this.list = list;
+        notifyDataSetChanged();
+    }
 
     public Context getContext() {
         return context;

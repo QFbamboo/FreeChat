@@ -4,11 +4,11 @@ import android.os.Handler;
 
 import com.bamboo.base.HttpHelper;
 import com.bamboo.bean.User;
+import com.bamboo.util.SPUtil;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
 
 import org.apache.http.Header;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.List;
@@ -119,9 +119,9 @@ public class Dao {
     }
 
     //若有用户添加此账号为好友，此方法用于接收——其他用户发来的添加好友的信息
-    public static void getMessage(String username, final Handler handler) {
+    public static void getMessage( final Handler handler) {
         RequestParams rp = new RequestParams();
-        rp.put("username", username);
+        rp.put("username", SPUtil.getDate("username"));
         HttpHelper.get(Url.MESSAGE_LIST, rp, new TextHttpResponseHandler() {
             @Override
             public void onSuccess(int i, Header[] headers, String s) {
@@ -130,7 +130,7 @@ public class Dao {
                     @Override
                     public void handleMessage(android.os.Message msg) {
                         if (msg.what == Tag.SUCCESS) {
-                            List<Message> list = (List<Message>) msg.obj;
+                            List<Msg> list = (List<Msg>) msg.obj;
                             handler.obtainMessage(Tag.SUCCESS, list).sendToTarget();
                         } else {
                             handler.obtainMessage(Tag.FAILURE).sendToTarget();
@@ -149,4 +149,92 @@ public class Dao {
 
     }
 
+    //接受对方加好友的请求
+    public static void friendRequest(String username, int msgID, final Handler handler) {
+        RequestParams rp = new RequestParams();
+        rp.put("username", username);
+        rp.put("msgID", msgID);
+        HttpHelper.get(Url.FRIEND_REQUEST, rp, new TextHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int i, Header[] headers, String s) {
+                try {
+                    Result result = new Result(s);
+                    if (result.status == 1) {
+                        handler.obtainMessage(Tag.SUCCESS).sendToTarget();
+                    } else if (result.status == 0) {
+                        handler.obtainMessage(Tag.FAILURE).sendToTarget();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    handler.obtainMessage(Tag.OTHER).sendToTarget();
+                }
+            }
+
+            @Override
+            public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
+                handler.obtainMessage(Tag.OTHER).sendToTarget();
+            }
+        });
+    }
+
+    //拒绝对方加好友的请求
+    public static void friendReject(String username, int msgID, final Handler handler) {
+        RequestParams rp = new RequestParams();
+        rp.put("username", username);
+        rp.put("msgID", msgID);
+        HttpHelper.get(Url.FRIEND_REJECT, rp, new TextHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int i, Header[] headers, String s) {
+                try {
+                    Result result = new Result(s);
+                    if (result.status == 1) {
+                        handler.obtainMessage(Tag.SUCCESS).sendToTarget();
+                    } else if (result.status == 0) {
+                        handler.obtainMessage(Tag.FAILURE).sendToTarget();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    handler.obtainMessage(Tag.OTHER).sendToTarget();
+                }
+            }
+
+            @Override
+            public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
+                handler.obtainMessage(Tag.OTHER).sendToTarget();
+            }
+
+        });
+    }
+
+    //获取好友列表
+    public static void getFriendList(String username, final Handler handler) {
+        RequestParams rp = new RequestParams();
+        rp.put("username", username);
+        HttpHelper.get(Url.FRIEND_LIST, rp, new TextHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int i, Header[] headers, String s) {
+
+                Result.getJsonFriendlist(s, new Handler() {
+                    @Override
+                    public void handleMessage(android.os.Message msg) {
+
+                        if (msg.what == Tag.SUCCESS) {
+                            List<Friend> list = (List<Friend>) msg.obj;
+                            handler.obtainMessage(Tag.SUCCESS, list).sendToTarget();
+                        } else {
+                            handler.obtainMessage(Tag.FAILURE).sendToTarget();
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
+                handler.obtainMessage(Tag.FAILURE).sendToTarget();
+            }
+        });
+    }
 }

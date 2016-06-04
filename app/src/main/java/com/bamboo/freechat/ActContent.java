@@ -26,10 +26,6 @@ public class ActContent extends BaseActivity {
     private ViewPager MyPager;
     private List<BaseFragment> fragmentList = new ArrayList<BaseFragment>();
 
-    String[] arr1 = {"haha", "lala", "heihei"};
-    String[] arr2 = {"hello", "windy", "bamboo"};
-    String[] arr3 = {"fengfeng", "xixi", "lulala"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +35,7 @@ public class ActContent extends BaseActivity {
 
     //初始化viewPager
     public void InitViewPager() {
-        fragmentList.add(new ActMessageFragment().newIntence(arr1));
+        fragmentList.add(new FragFriendChat());
         fragmentList.add(new FragMessage());
         fragmentList.add(new FragUser());
 //        FragmentManager fragmentManager = getSupportFragmentManager();

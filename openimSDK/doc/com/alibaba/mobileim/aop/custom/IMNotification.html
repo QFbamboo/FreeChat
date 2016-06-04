@@ -153,13 +153,13 @@ extends BaseAdvice</pre>
 <td class="colFirst"><code>Intent</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#getCustomNotificationIntent(Intent, com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage, int)">getCustomNotificationIntent</a></strong>(Intent&nbsp;intent,
                            <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                            int&nbsp;totalUnReadCount)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>Intent</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#getCustomNotificationIntent(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage, int)">getCustomNotificationIntent</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                            int&nbsp;totalUnReadCount)</code>
 <div class="block">收到消息时的自定义通知栏点击Intent</div>
 </td>
@@ -179,7 +179,7 @@ extends BaseAdvice</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#getNotificationTips(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage, int)">getNotificationTips</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                    int&nbsp;totalUnReadCount)</code>
 <div class="block">收到消息时，自定义消息通知栏的提示文案</div>
 </td>
@@ -187,21 +187,21 @@ extends BaseAdvice</pre>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#needQuiet(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage)">needQuiet</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">是否开启免打扰模式，若开启免打扰模式则收到新消息时不发送通知栏提醒，只在会话列表页面显示未读数</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#needSound(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage)">needSound</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">收到通知栏消息时是否有声音提醒</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#needVibrator(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage)">needVibrator</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-            <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+            <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">收到通知栏消息时是否震动提醒</div>
 </td>
 </tr>
@@ -251,10 +251,10 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getNotificationTips</h4>
 <pre>public&nbsp;java.lang.String&nbsp;getNotificationTips(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                    int&nbsp;totalUnReadCount)</pre>
 <div class="block">收到消息时，自定义消息通知栏的提示文案</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 当前消息所在会话</dd><dd><code>message</code> - 收到的新消息</dd><dd><code>totalUnReadCount</code> - 当前登录用户的总未读数</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 当前消息所在会话</dd><dd><code>msg</code> - 收到的新消息</dd><dd><code>totalUnReadCount</code> - 当前登录用户的总未读数</dd></dl>
 </li>
 </ul>
 <a name="needQuiet(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage)">
@@ -264,9 +264,9 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>needQuiet</h4>
 <pre>public&nbsp;boolean&nbsp;needQuiet(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">是否开启免打扰模式，若开启免打扰模式则收到新消息时不发送通知栏提醒，只在会话列表页面显示未读数</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 收到的新消息所在会话</dd><dd><code>message</code> - 收到的新消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 收到的新消息所在会话</dd><dd><code>msg</code> - 收到的新消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd>true:开启， false：不开启</dd></dl>
 </li>
 </ul>
@@ -277,9 +277,9 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>needVibrator</h4>
 <pre>public&nbsp;boolean&nbsp;needVibrator(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">收到通知栏消息时是否震动提醒</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 收到的新消息所在会话</dd><dd><code>message</code> - 收到的新消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 收到的新消息所在会话</dd><dd><code>msg</code> - 收到的新消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd>true：震动, false:不震动</dd></dl>
 </li>
 </ul>
@@ -290,9 +290,9 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>needSound</h4>
 <pre>public&nbsp;boolean&nbsp;needSound(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">收到通知栏消息时是否有声音提醒</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 收到的新消息所在会话</dd><dd><code>message</code> - 收到的新消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 收到的新消息所在会话</dd><dd><code>msg</code> - 收到的新消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd>true：有提示音，false：没有提示音</dd></dl>
 </li>
 </ul>
@@ -303,10 +303,10 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getCustomNotificationIntent</h4>
 <pre>public&nbsp;Intent&nbsp;getCustomNotificationIntent(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                  int&nbsp;totalUnReadCount)</pre>
 <div class="block">收到消息时的自定义通知栏点击Intent</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 收到消息的会话</dd><dd><code>message</code> - 收到的消息</dd><dd><code>totalUnReadCount</code> - 会话中消息未读数</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>conversation</code> - 收到消息的会话</dd><dd><code>msg</code> - 收到的消息</dd><dd><code>totalUnReadCount</code> - 会话中消息未读数</dd>
 <dt><span class="strong">Returns:</span></dt><dd>如果返回null，则使用全局自定义Intent</dd></dl>
 </li>
 </ul>
@@ -318,7 +318,7 @@ extends BaseAdvice</pre>
 <h4>getCustomNotificationIntent</h4>
 <pre>public&nbsp;Intent&nbsp;getCustomNotificationIntent(Intent&nbsp;intent,
                                  <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                  int&nbsp;totalUnReadCount)</pre>
 </li>
 </ul>

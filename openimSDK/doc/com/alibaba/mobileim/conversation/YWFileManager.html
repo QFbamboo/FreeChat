@@ -152,7 +152,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWFileManager.html#downloadFile(com.alibaba.mobileim.conversation.YWMessage, java.lang.String, java.lang.String, com.alibaba.mobileim.channel.event.IWxCallback)">downloadFile</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWFileManager.html#downloadFile(com.alibaba.mobileim.conversation.YWMessage, java.lang.String, java.lang.String, com.alibaba.mobileim.channel.event.IWxCallback)">downloadFile</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
             java.lang.String&nbsp;targetFilePath,
             java.lang.String&nbsp;targetFileName,
             <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
@@ -206,14 +206,14 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>downloadFile</h4>
-<pre>public abstract&nbsp;void&nbsp;downloadFile(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<pre>public abstract&nbsp;void&nbsp;downloadFile(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                 java.lang.String&nbsp;targetFilePath,
                 java.lang.String&nbsp;targetFileName,
                 <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</pre>
 <div class="block">下载某一条消息中的文件记录 图片消息会下载图片的预览图，即<code>YWImageMessageBody#getContent()</code> <br />
  语音消息会下载语音文件，即<code>YWAudioMessageBody#getContent()</code>
  请在异步线程调用该方法！！！</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 需要下载文件内容的消息记录</dd><dd><code>targetFilePath</code> - 存储下载文件的目标文件地址，精确到文件存储名称</dd><dd><code>targetFileName</code> - 存储下载文件的目标文件名称</dd><dd><code>callback</code> - 下载回调，包含进度回调</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 需要下载文件内容的消息记录</dd><dd><code>targetFilePath</code> - 存储下载文件的目标文件地址，精确到文件存储名称</dd><dd><code>targetFileName</code> - 存储下载文件的目标文件名称</dd><dd><code>callback</code> - 下载回调，包含进度回调</dd></dl>
 </li>
 </ul>
 <a name="downloadFile(java.lang.String, java.lang.String, java.lang.String, com.alibaba.mobileim.channel.event.IWxCallback)">

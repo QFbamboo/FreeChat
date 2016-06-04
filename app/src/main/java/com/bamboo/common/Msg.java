@@ -2,10 +2,12 @@ package com.bamboo.common;
 
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 /**
  * Created by bamboo on 16-6-3.
  */
-public class Message {
+public class Msg implements Serializable {
     private int fromuserid;
     private int flag;
     private String fromUserName;
@@ -13,12 +15,12 @@ public class Message {
     private String fromAvatar;
     private long add_time;
 
-    public Message() {
+    public Msg() {
 
     }
 
-    public Message(int fromuserid, int flag, String fromUserName, int id,
-                   String fromAvatar, long add_time) {
+    public Msg(int fromuserid, int flag, String fromUserName, int id,
+               String fromAvatar, long add_time) {
 
         this.fromuserid = fromuserid;
         this.flag = flag;
@@ -34,6 +36,14 @@ public class Message {
 
     public int getFromuserid() {
         return fromuserid;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setFlag(int flag) {

@@ -154,21 +154,21 @@ extends BaseAdvice</pre>
 <tr class="altColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomGeoMessageView(Fragment, com.alibaba.mobileim.conversation.YWMessage)">getCustomGeoMessageView</a></strong>(Fragment&nbsp;fragment,
-                       <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                       <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomMessageView(Fragment, com.alibaba.mobileim.conversation.YWMessage)">getCustomMessageView</a></strong>(Fragment&nbsp;fragment,
-                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomMessageViewWithoutHead(Fragment, com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.conversation.YWConversation)">getCustomMessageViewWithoutHead</a></strong>(Fragment&nbsp;fragment,
-                               <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                               <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
@@ -182,7 +182,7 @@ extends BaseAdvice</pre>
 <tr class="altColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomUrlView(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)">getCustomUrlView</a></strong>(Fragment&nbsp;fragment,
-                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                 java.lang.String&nbsp;url,
                 <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</code>
 <div class="block">获取url对应的自定义view,当openIM发送或者接收到url消息时会回调该方法获取该url的自定义view。若开发者实现了该方法并且返回了一个view对象，openIM将会使用该view展示对应的url消息。</div>
@@ -191,7 +191,7 @@ extends BaseAdvice</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomView(Fragment, com.alibaba.mobileim.conversation.YWMessage, View, int, YWContactHeadLoadHelper)">getCustomView</a></strong>(Fragment&nbsp;fragment,
-             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
              View&nbsp;convertView,
              int&nbsp;viewType,
              YWContactHeadLoadHelper&nbsp;headLoadHelper)</code>
@@ -200,7 +200,7 @@ extends BaseAdvice</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewType(com.alibaba.mobileim.conversation.YWMessage)">getCustomViewType</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewType(com.alibaba.mobileim.conversation.YWMessage)">getCustomViewType</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">当前消息对应的自定义view类型</div>
 </td>
 </tr>
@@ -219,7 +219,7 @@ extends BaseAdvice</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>GoodsInfo</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getGoodsInfoFromUrl(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)">getGoodsInfoFromUrl</a></strong>(Fragment&nbsp;fragment,
-                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                    java.lang.String&nbsp;url,
                    <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</code>
 <div class="block">获取url对应的商品详情信息，当openIM发送或者接收到url消息时会首先调用<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomUrlView(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)"><code>getCustomUrlView(Fragment, YWMessage, String, YWConversation)</code></a>,
@@ -263,14 +263,14 @@ extends BaseAdvice</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onCustomMessageClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onCustomMessageClick</a></strong>(Fragment&nbsp;fragment,
-                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">聊天窗口一些通用的文案定制</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onCustomMessageLongClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onCustomMessageLongClick</a></strong>(Fragment&nbsp;fragment,
-                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
@@ -284,28 +284,28 @@ extends BaseAdvice</pre>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onGeoMessageClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onGeoMessageClick</a></strong>(Fragment&nbsp;fragment,
-                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onGeoMessageLongClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onGeoMessageLongClick</a></strong>(Fragment&nbsp;fragment,
-                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onMessageClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onMessageClick</a></strong>(Fragment&nbsp;fragment,
-              <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+              <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">定制点击消息事件, 每一条消息的点击事件都会回调该方法，开发者根据消息类型，对不同类型的消息设置不同的点击事件</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onMessageLongClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onMessageLongClick</a></strong>(Fragment&nbsp;fragment,
-                  <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                  <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">定制长按消息事件，每一条消息的长按事件都会回调该方法，开发者根据消息类型，对不同类型的消息设置不同的长按事件</div>
 </td>
 </tr>
@@ -327,7 +327,7 @@ extends BaseAdvice</pre>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onUrlClick(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)">onUrlClick</a></strong>(Fragment&nbsp;fragment,
-          <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+          <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
           java.lang.String&nbsp;url,
           <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</code>
 <div class="block">单聊ui界面，点击url的事件拦截  返回true;表示自定义处理，返回false，由默认处理</div>
@@ -336,7 +336,7 @@ extends BaseAdvice</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#useInCallMode(Fragment, com.alibaba.mobileim.conversation.YWMessage)">useInCallMode</a></strong>(Fragment&nbsp;fragment,
-             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">播放语音消息时是否使用听筒模式，默认使用扬声器模式播放语音消息</div>
 </td>
 </tr>
@@ -401,9 +401,9 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>useInCallMode</h4>
 <pre>public&nbsp;boolean&nbsp;useInCallMode(Fragment&nbsp;fragment,
-                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">播放语音消息时是否使用听筒模式，默认使用扬声器模式播放语音消息</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment</dd><dd><code>message</code> - 语音消</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment</dd><dd><code>msg</code> - 语音消</dd>
 <dt><span class="strong">Returns:</span></dt><dd>true: 使用听筒模式播放语音消息  false：使用扬声器模式播放语音消息</dd></dl>
 </li>
 </ul>
@@ -440,9 +440,9 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>onMessageClick</h4>
 <pre>public&nbsp;boolean&nbsp;onMessageClick(Fragment&nbsp;fragment,
-                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">定制点击消息事件, 每一条消息的点击事件都会回调该方法，开发者根据消息类型，对不同类型的消息设置不同的点击事件</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment对象</dd><dd><code>message</code> - 被点击的消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment对象</dd><dd><code>msg</code> - 被点击的消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd>true:使用用户自定义的消息点击事件，false：使用默认的消息点击事件</dd></dl>
 </li>
 </ul>
@@ -453,9 +453,9 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>onMessageLongClick</h4>
 <pre>public&nbsp;boolean&nbsp;onMessageLongClick(Fragment&nbsp;fragment,
-                         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">定制长按消息事件，每一条消息的长按事件都会回调该方法，开发者根据消息类型，对不同类型的消息设置不同的长按事件</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment对象</dd><dd><code>message</code> - 被点击的消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment对象</dd><dd><code>msg</code> - 被点击的消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd>true:使用用户自定义的长按消息事件，false：使用默认的长按消息事件</dd></dl>
 </li>
 </ul>
@@ -475,13 +475,13 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getGoodsInfoFromUrl</h4>
 <pre>public&nbsp;GoodsInfo&nbsp;getGoodsInfoFromUrl(Fragment&nbsp;fragment,
-                            <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                            <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                             java.lang.String&nbsp;url,
                             <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</pre>
 <div class="block">获取url对应的商品详情信息，当openIM发送或者接收到url消息时会首先调用<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomUrlView(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)"><code>getCustomUrlView(Fragment, YWMessage, String, YWConversation)</code></a>,
  若getCustomUrlView()返回null，才会回调调用该方法获取商品详情，若getCustomUrlView()返回非null的view对象，则直接用此view展示url消息，不再回调该方法。因此，如果希望该方法被调用,
  请确保<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomUrlView(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)"><code>getCustomUrlView(Fragment, YWMessage, String, YWConversation)</code></a>返回null。</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 可以通过 fragment.getActivity拿到Context</dd><dd><code>message</code> - url所属的message</dd><dd><code>url</code> - url</dd><dd><code>ywConversation</code> - message所属的conversion</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 可以通过 fragment.getActivity拿到Context</dd><dd><code>msg</code> - url所属的message</dd><dd><code>url</code> - url</dd><dd><code>ywConversation</code> - message所属的conversion</dd>
 <dt><span class="strong">Returns:</span></dt><dd>商品信息</dd></dl>
 </li>
 </ul>
@@ -492,11 +492,11 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getCustomUrlView</h4>
 <pre>public&nbsp;View&nbsp;getCustomUrlView(Fragment&nbsp;fragment,
-                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                     java.lang.String&nbsp;url,
                     <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</pre>
 <div class="block">获取url对应的自定义view,当openIM发送或者接收到url消息时会回调该方法获取该url的自定义view。若开发者实现了该方法并且返回了一个view对象，openIM将会使用该view展示对应的url消息。</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 可以通过 fragment.getActivity拿到Context</dd><dd><code>message</code> - url所属的message</dd><dd><code>url</code> - url</dd><dd><code>ywConversation</code> - message所属的conversion</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 可以通过 fragment.getActivity拿到Context</dd><dd><code>msg</code> - url所属的message</dd><dd><code>url</code> - url</dd><dd><code>ywConversation</code> - message所属的conversion</dd>
 <dt><span class="strong">Returns:</span></dt><dd>自定义Url view</dd></dl>
 </li>
 </ul>
@@ -507,11 +507,11 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>onUrlClick</h4>
 <pre>public&nbsp;boolean&nbsp;onUrlClick(Fragment&nbsp;fragment,
-                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                  java.lang.String&nbsp;url,
                  <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</pre>
 <div class="block">单聊ui界面，点击url的事件拦截  返回true;表示自定义处理，返回false，由默认处理</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 可以通过 fragment.getActivity拿到Context</dd><dd><code>message</code> - 点击的url所属的message</dd><dd><code>url</code> - 点击的url</dd><dd><code>ywConversation</code> - 当前消息所在会话</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 可以通过 fragment.getActivity拿到Context</dd><dd><code>msg</code> - 点击的url所属的message</dd><dd><code>url</code> - 点击的url</dd><dd><code>ywConversation</code> - 当前消息所在会话</dd></dl>
 </li>
 </ul>
 <a name="messageToSendWhenOpenChatting(Fragment, com.alibaba.mobileim.conversation.YWConversation)">
@@ -568,9 +568,9 @@ extends BaseAdvice</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getCustomViewType</h4>
-<pre>public&nbsp;int&nbsp;getCustomViewType(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+<pre>public&nbsp;int&nbsp;getCustomViewType(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">当前消息对应的自定义view类型</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 需要自定义显示的消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 需要自定义显示的消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd>当前消息对应自定义view类型</dd></dl>
 </li>
 </ul>
@@ -593,12 +593,12 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getCustomView</h4>
 <pre>public&nbsp;View&nbsp;getCustomView(Fragment&nbsp;fragment,
-                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                  View&nbsp;convertView,
                  int&nbsp;viewType,
                  YWContactHeadLoadHelper&nbsp;headLoadHelper)</pre>
 <div class="block">根据viewType获取自定义view</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment</dd><dd><code>message</code> - 当前需要自定义view的消息</dd><dd><code>convertView</code> - 自定义view</dd><dd><code>viewType</code> - 自定义view类型</dd><dd><code>headLoadHelper</code> - 头像加载管理器，用户可以调用该对象的方法加载头像</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - 聊天窗口fragment</dd><dd><code>msg</code> - 当前需要自定义view的消息</dd><dd><code>convertView</code> - 自定义view</dd><dd><code>viewType</code> - 自定义view类型</dd><dd><code>headLoadHelper</code> - 头像加载管理器，用户可以调用该对象的方法加载头像</dd>
 <dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
@@ -631,12 +631,12 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getCustomGeoMessageView</h4>
 <pre>public&nbsp;View&nbsp;getCustomGeoMessageView(Fragment&nbsp;fragment,
-                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i></i></div>
 <div class="block">自定义地址位置消息的view，该方法存在性能问题，已废弃，后续请使用以下四个方法替代：
  <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewTypeCount()"><code>getCustomViewTypeCount()</code></a>, <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewType(com.alibaba.mobileim.conversation.YWMessage)"><code>getCustomViewType(YWMessage)</code></a>,
  <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#needHideHead(int)"><code>needHideHead(int)</code></a>,<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomGeoMessageView(Fragment, com.alibaba.mobileim.conversation.YWMessage)"><code>getCustomGeoMessageView(Fragment, YWMessage)</code></a></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 地理位置消息</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 地理位置消息</dd>
 <dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
@@ -647,12 +647,12 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getCustomMessageView</h4>
 <pre>public&nbsp;View&nbsp;getCustomMessageView(Fragment&nbsp;fragment,
-                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i></i></div>
 <div class="block">该方法存在性能问题，已废弃，后续请使用以下四个方法替代：
  <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewTypeCount()"><code>getCustomViewTypeCount()</code></a>, <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewType(com.alibaba.mobileim.conversation.YWMessage)"><code>getCustomViewType(YWMessage)</code></a>,
  <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#needHideHead(int)"><code>needHideHead(int)</code></a>,<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomGeoMessageView(Fragment, com.alibaba.mobileim.conversation.YWMessage)"><code>getCustomGeoMessageView(Fragment, YWMessage)</code></a></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - </dd><dd><code>message</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - </dd><dd><code>msg</code> - </dd>
 <dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
@@ -663,13 +663,13 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>getCustomMessageViewWithoutHead</h4>
 <pre>public&nbsp;View&nbsp;getCustomMessageViewWithoutHead(Fragment&nbsp;fragment,
-                                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                    <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i></i></div>
 <div class="block">定制不显示头像的自定义消息View,该方法存在性能问题，已废弃，后续请使用以下四个方法替代：
  <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewTypeCount()"><code>getCustomViewTypeCount()</code></a>, <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewType(com.alibaba.mobileim.conversation.YWMessage)"><code>getCustomViewType(YWMessage)</code></a>,
  <a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#needHideHead(int)"><code>needHideHead(int)</code></a>,<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomGeoMessageView(Fragment, com.alibaba.mobileim.conversation.YWMessage)"><code>getCustomGeoMessageView(Fragment, YWMessage)</code></a></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - </dd><dd><code>message</code> - </dd><dd><code>conversation</code> - </dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - </dd><dd><code>msg</code> - </dd><dd><code>conversation</code> - </dd>
 <dt><span class="strong">Returns:</span></dt><dd></dd></dl>
 </li>
 </ul>
@@ -694,7 +694,7 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>onCustomMessageClick</h4>
 <pre>public&nbsp;void&nbsp;onCustomMessageClick(Fragment&nbsp;fragment,
-                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">聊天窗口一些通用的文案定制</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>fragment</code> - </dd><dd><code>conversation</code> - </dd></dl>
 </li>
@@ -706,7 +706,7 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>onCustomMessageLongClick</h4>
 <pre>public&nbsp;void&nbsp;onCustomMessageLongClick(Fragment&nbsp;fragment,
-                            <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                            <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i></i></div>
 <div class="block">长按自定义消息事件，该方法已废弃，后续请使用<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onMessageLongClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)"><code>onMessageLongClick(Fragment, YWMessage)</code></a></div>
 </li>
@@ -718,7 +718,7 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>onGeoMessageClick</h4>
 <pre>public&nbsp;void&nbsp;onGeoMessageClick(Fragment&nbsp;fragment,
-                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i></i></div>
 <div class="block">点击地理位置消息事件，该方法已废弃，后续请使用<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onMessageClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)"><code>onMessageClick(Fragment, YWMessage)</code></a></div>
 </li>
@@ -730,10 +730,10 @@ extends BaseAdvice</pre>
 <li class="blockList">
 <h4>onGeoMessageLongClick</h4>
 <pre>public&nbsp;void&nbsp;onGeoMessageLongClick(Fragment&nbsp;fragment,
-                         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+                         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i></i></div>
 <div class="block">长按地理位置消息事件，该方法已废弃，后续请使用<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onMessageLongClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)"><code>onMessageLongClick(Fragment, YWMessage)</code></a></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - </dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - </dd></dl>
 </li>
 </ul>
 <a name="getFastReplyResId(com.alibaba.mobileim.conversation.YWConversation)">

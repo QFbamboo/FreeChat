@@ -129,7 +129,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#deleteMessage(com.alibaba.mobileim.conversation.YWMessage)">deleteMessage</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#deleteMessage(com.alibaba.mobileim.conversation.YWMessage)">deleteMessage</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">删除会话中的某一条消息记录
  
  该方法必须在ui主线程调用</div>
@@ -201,7 +201,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#loadMsgContext(com.alibaba.mobileim.conversation.YWMessage, int, int, com.alibaba.mobileim.channel.event.IWxCallback)">loadMsgContext</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#loadMsgContext(com.alibaba.mobileim.conversation.YWMessage, int, int, com.alibaba.mobileim.channel.event.IWxCallback)">loadMsgContext</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
               int&nbsp;count,
               int&nbsp;rangeFlag,
               <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
@@ -217,7 +217,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#updateMessageTODB(com.alibaba.mobileim.conversation.YWMessage)">updateMessageTODB</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+<td class="colLast"><code><strong><a href="../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#updateMessageTODB(com.alibaba.mobileim.conversation.YWMessage)">updateMessageTODB</a></strong>(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">更新消息到数据库，主要用于语音消息已读状态变更的调用</div>
 </td>
 </tr>
@@ -316,9 +316,9 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>updateMessageTODB</h4>
-<pre>void&nbsp;updateMessageTODB(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+<pre>void&nbsp;updateMessageTODB(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">更新消息到数据库，主要用于语音消息已读状态变更的调用</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 消息</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 消息</dd></dl>
 </li>
 </ul>
 <a name="loadAllImageMessage(com.alibaba.mobileim.channel.event.IWxCallback)">
@@ -350,11 +350,11 @@
 <ul class="blockList">
 <li class="blockList">
 <h4>deleteMessage</h4>
-<pre>void&nbsp;deleteMessage(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</pre>
+<pre>void&nbsp;deleteMessage(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</pre>
 <div class="block">删除会话中的某一条消息记录
  
  该方法必须在ui主线程调用</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 需要删除的消息</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 需要删除的消息</dd></dl>
 </li>
 </ul>
 <a name="loadAtMessages(int, com.alibaba.mobileim.channel.event.IWxCallback)">
@@ -404,12 +404,12 @@
 <ul class="blockListLast">
 <li class="blockList">
 <h4>loadMsgContext</h4>
-<pre>java.util.List&lt;<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&gt;&nbsp;loadMsgContext(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<pre>java.util.List&lt;<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&gt;&nbsp;loadMsgContext(<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                        int&nbsp;count,
                                        int&nbsp;rangeFlag,
                                        <a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</pre>
 <div class="block">加载message的上下文</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>message</code> - 当前消息</dd><dd><code>count</code> - 请求上下文消息条数[2,40]</dd><dd><code>rangeFlag</code> - 0：请求之前的
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - 当前消息</dd><dd><code>count</code> - 请求上下文消息条数[2,40]</dd><dd><code>rangeFlag</code> - 0：请求之前的
                 1：请求之后的
                 2：请求上下文</dd><dd><code>callback</code> - 回调接口，成功回调<a href="../../../../com/alibaba/mobileim/channel/event/IWxCallback.html#onSuccess(java.lang.Object...)"><code>IWxCallback.onSuccess(Object... object)</code></a>,其中object[0]即为List<<a href="../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation"><code>YWMessage</code></a>></dd></dl>
 </li>

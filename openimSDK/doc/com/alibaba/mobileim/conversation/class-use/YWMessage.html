@@ -112,14 +112,14 @@
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">IYWP2PPushListener.</span><code><strong><a href="../../../../../com/alibaba/mobileim/IYWP2PPushListener.html#onPushMessage(com.alibaba.mobileim.contact.IYWContact, com.alibaba.mobileim.conversation.YWMessage)">onPushMessage</a></strong>(<a href="../../../../../com/alibaba/mobileim/contact/IYWContact.html" title="interface in com.alibaba.mobileim.contact">IYWContact</a>&nbsp;contact,
-             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">有未处理的聊天消息需要通知给用户 收到此消息时，可以调用Notification来发送消息通知</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">IYWTribePushListener.</span><code><strong><a href="../../../../../com/alibaba/mobileim/IYWTribePushListener.html#onPushMessage(com.alibaba.mobileim.gingko.model.tribe.YWTribe, com.alibaba.mobileim.conversation.YWMessage)">onPushMessage</a></strong>(<a href="../../../../../com/alibaba/mobileim/gingko/model/tribe/YWTribe.html" title="interface in com.alibaba.mobileim.gingko.model.tribe">YWTribe</a>&nbsp;tribe,
-             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">群相关的消息回调</div>
 </td>
 </tr>
@@ -164,21 +164,21 @@
 <tr class="altColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomGeoMessageView(Fragment, com.alibaba.mobileim.conversation.YWMessage)">getCustomGeoMessageView</a></strong>(Fragment&nbsp;fragment,
-                       <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                       <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomMessageView(Fragment, com.alibaba.mobileim.conversation.YWMessage)">getCustomMessageView</a></strong>(Fragment&nbsp;fragment,
-                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomMessageViewWithoutHead(Fragment, com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.conversation.YWConversation)">getCustomMessageViewWithoutHead</a></strong>(Fragment&nbsp;fragment,
-                               <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                               <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
@@ -187,13 +187,13 @@
 <td class="colFirst"><code>Intent</code></td>
 <td class="colLast"><span class="strong">IMNotification.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#getCustomNotificationIntent(Intent, com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage, int)">getCustomNotificationIntent</a></strong>(Intent&nbsp;intent,
                            <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                            int&nbsp;totalUnReadCount)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>Intent</code></td>
 <td class="colLast"><span class="strong">IMNotification.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#getCustomNotificationIntent(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage, int)">getCustomNotificationIntent</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                           <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                            int&nbsp;totalUnReadCount)</code>
 <div class="block">收到消息时的自定义通知栏点击Intent</div>
 </td>
@@ -201,7 +201,7 @@
 <tr class="rowColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomUrlView(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)">getCustomUrlView</a></strong>(Fragment&nbsp;fragment,
-                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                 java.lang.String&nbsp;url,
                 <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</code>
 <div class="block">获取url对应的自定义view,当openIM发送或者接收到url消息时会回调该方法获取该url的自定义view。若开发者实现了该方法并且返回了一个view对象，openIM将会使用该view展示对应的url消息。</div>
@@ -210,7 +210,7 @@
 <tr class="altColor">
 <td class="colFirst"><code>View</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomView(Fragment, com.alibaba.mobileim.conversation.YWMessage, View, int, YWContactHeadLoadHelper)">getCustomView</a></strong>(Fragment&nbsp;fragment,
-             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
              View&nbsp;convertView,
              int&nbsp;viewType,
              YWContactHeadLoadHelper&nbsp;headLoadHelper)</code>
@@ -219,14 +219,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewType(com.alibaba.mobileim.conversation.YWMessage)">getCustomViewType</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+<td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomViewType(com.alibaba.mobileim.conversation.YWMessage)">getCustomViewType</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">当前消息对应的自定义view类型</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>GoodsInfo</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getGoodsInfoFromUrl(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)">getGoodsInfoFromUrl</a></strong>(Fragment&nbsp;fragment,
-                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                    java.lang.String&nbsp;url,
                    <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</code>
 <div class="block">获取url对应的商品详情信息，当openIM发送或者接收到url消息时会首先调用<a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#getCustomUrlView(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)"><code>IMChattingPageOperateion.getCustomUrlView(Fragment, YWMessage, String, YWConversation)</code></a>,
@@ -237,14 +237,14 @@
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><span class="strong">IMChattingPageUI.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageUI.html#getImageSavePath(Fragment, com.alibaba.mobileim.conversation.YWMessage)">getImageSavePath</a></strong>(Fragment&nbsp;fragment,
-                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">自定义图片的本地保存地址</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><span class="strong">IMChattingPageUI.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageUI.html#getMsgBackgroundResId(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage, boolean)">getMsgBackgroundResId</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                      boolean&nbsp;self)</code>
 <div class="block">设置消息气泡背景图，需要.9图</div>
 </td>
@@ -252,7 +252,7 @@
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><span class="strong">IMNotification.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#getNotificationTips(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage, int)">getNotificationTips</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+                   <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                    int&nbsp;totalUnReadCount)</code>
 <div class="block">收到消息时，自定义消息通知栏的提示文案</div>
 </td>
@@ -278,77 +278,77 @@
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">IMNotification.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#needQuiet(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage)">needQuiet</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">是否开启免打扰模式，若开启免打扰模式则收到新消息时不发送通知栏提醒，只在会话列表页面显示未读数</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">IMNotification.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#needSound(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage)">needSound</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+         <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">收到通知栏消息时是否有声音提醒</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">IMNotification.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMNotification.html#needVibrator(com.alibaba.mobileim.conversation.YWConversation, com.alibaba.mobileim.conversation.YWMessage)">needVibrator</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;conversation,
-            <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+            <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">收到通知栏消息时是否震动提醒</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onCustomMessageClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onCustomMessageClick</a></strong>(Fragment&nbsp;fragment,
-                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                    <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">聊天窗口一些通用的文案定制</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onCustomMessageLongClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onCustomMessageLongClick</a></strong>(Fragment&nbsp;fragment,
-                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                        <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onGeoMessageClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onGeoMessageClick</a></strong>(Fragment&nbsp;fragment,
-                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                 <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onGeoMessageLongClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onGeoMessageLongClick</a></strong>(Fragment&nbsp;fragment,
-                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                     <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">IMChattingPageUI.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageUI.html#onImagePreviewTitleButtonClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onImagePreviewTitleButtonClick</a></strong>(Fragment&nbsp;fragment,
-                              <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                              <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">自定义图片预览页面顶部titlebar右侧按钮的点击行为。</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onMessageClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onMessageClick</a></strong>(Fragment&nbsp;fragment,
-              <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+              <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">定制点击消息事件, 每一条消息的点击事件都会回调该方法，开发者根据消息类型，对不同类型的消息设置不同的点击事件</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onMessageLongClick(Fragment, com.alibaba.mobileim.conversation.YWMessage)">onMessageLongClick</a></strong>(Fragment&nbsp;fragment,
-                  <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+                  <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">定制长按消息事件，每一条消息的长按事件都会回调该方法，开发者根据消息类型，对不同类型的消息设置不同的长按事件</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#onUrlClick(Fragment, com.alibaba.mobileim.conversation.YWMessage, java.lang.String, com.alibaba.mobileim.conversation.YWConversation)">onUrlClick</a></strong>(Fragment&nbsp;fragment,
-          <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+          <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
           java.lang.String&nbsp;url,
           <a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html" title="class in com.alibaba.mobileim.conversation">YWConversation</a>&nbsp;ywConversation)</code>
 <div class="block">单聊ui界面，点击url的事件拦截  返回true;表示自定义处理，返回false，由默认处理</div>
@@ -357,7 +357,7 @@
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">IMChattingPageOperateion.</span><code><strong><a href="../../../../../com/alibaba/mobileim/aop/custom/IMChattingPageOperateion.html#useInCallMode(Fragment, com.alibaba.mobileim.conversation.YWMessage)">useInCallMode</a></strong>(Fragment&nbsp;fragment,
-             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+             <a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">播放语音消息时是否使用听筒模式，默认使用扬声器模式播放语音消息</div>
 </td>
 </tr>
@@ -606,7 +606,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&gt;</code></td>
-<td class="colLast"><span class="strong">YWMessageLoader.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#loadMsgContext(com.alibaba.mobileim.conversation.YWMessage, int, int, com.alibaba.mobileim.channel.event.IWxCallback)">loadMsgContext</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWMessageLoader.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#loadMsgContext(com.alibaba.mobileim.conversation.YWMessage, int, int, com.alibaba.mobileim.channel.event.IWxCallback)">loadMsgContext</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
               int&nbsp;count,
               int&nbsp;rangeFlag,
               <a href="../../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
@@ -624,7 +624,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="strong">YWMessageLoader.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#deleteMessage(com.alibaba.mobileim.conversation.YWMessage)">deleteMessage</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+<td class="colLast"><span class="strong">YWMessageLoader.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#deleteMessage(com.alibaba.mobileim.conversation.YWMessage)">deleteMessage</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">删除会话中的某一条消息记录
  
  该方法必须在ui主线程调用</div>
@@ -632,7 +632,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="strong">YWFileManager.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWFileManager.html#downloadFile(com.alibaba.mobileim.conversation.YWMessage, java.lang.String, java.lang.String, com.alibaba.mobileim.channel.event.IWxCallback)">downloadFile</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWFileManager.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWFileManager.html#downloadFile(com.alibaba.mobileim.conversation.YWMessage, java.lang.String, java.lang.String, com.alibaba.mobileim.channel.event.IWxCallback)">downloadFile</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
             java.lang.String&nbsp;targetFilePath,
             java.lang.String&nbsp;targetFileName,
             <a href="../../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
@@ -643,21 +643,21 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnReadCount(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnReadCount</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnReadCount(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnReadCount</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                        <a href="../../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block">获取单条@消息的已读未读数</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnreadList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnreadList</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnreadList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnreadList</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                       <a href="../../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;&nbsp;</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnreadTribeMemberList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnreadTribeMemberList</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#getAtMsgReadUnreadTribeMemberList(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">getAtMsgReadUnreadTribeMemberList</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                                  <a href="../../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block">获取某条@消息的已读未读列表</div>
 </td>
@@ -688,7 +688,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&gt;</code></td>
-<td class="colLast"><span class="strong">YWMessageLoader.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#loadMsgContext(com.alibaba.mobileim.conversation.YWMessage, int, int, com.alibaba.mobileim.channel.event.IWxCallback)">loadMsgContext</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWMessageLoader.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#loadMsgContext(com.alibaba.mobileim.conversation.YWMessage, int, int, com.alibaba.mobileim.channel.event.IWxCallback)">loadMsgContext</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
               int&nbsp;count,
               int&nbsp;rangeFlag,
               <a href="../../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
@@ -697,14 +697,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#sendAtMsgReadAck(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">sendAtMsgReadAck</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#sendAtMsgReadAck(com.alibaba.mobileim.conversation.YWMessage, com.alibaba.mobileim.channel.event.IWxCallback)">sendAtMsgReadAck</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                 <a href="../../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block">发送单条消息的已读确认</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="strong">YWMessageSender.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageSender.html#sendMessage(com.alibaba.mobileim.conversation.YWMessage, long, com.alibaba.mobileim.channel.event.IWxCallback)">sendMessage</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWMessageSender.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageSender.html#sendMessage(com.alibaba.mobileim.conversation.YWMessage, long, com.alibaba.mobileim.channel.event.IWxCallback)">sendMessage</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
            long&nbsp;timeout,
            <a href="../../../../../com/alibaba/mobileim/channel/event/IWxCallback.html" title="interface in com.alibaba.mobileim.channel.event">IWxCallback</a>&nbsp;callback)</code>
 <div class="block">向会话对应的聊天对象userId发送一条消息
@@ -721,14 +721,14 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
-<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#updateAtMsgRead(com.alibaba.mobileim.conversation.YWMessage, java.lang.String)">updateAtMsgRead</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message,
+<td class="colLast"><span class="strong">YWConversation.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWConversation.html#updateAtMsgRead(com.alibaba.mobileim.conversation.YWMessage, java.lang.String)">updateAtMsgRead</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg,
                java.lang.String&nbsp;mUserId)</code>
 <div class="block">把会话中的单条at消息置为已读</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="strong">YWMessageLoader.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#updateMessageTODB(com.alibaba.mobileim.conversation.YWMessage)">updateMessageTODB</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+<td class="colLast"><span class="strong">YWMessageLoader.</span><code><strong><a href="../../../../../com/alibaba/mobileim/conversation/YWMessageLoader.html#updateMessageTODB(com.alibaba.mobileim.conversation.YWMessage)">updateMessageTODB</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">更新消息到数据库，主要用于语音消息已读状态变更的调用</div>
 </td>
 </tr>
@@ -792,7 +792,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="strong">IYWTribeService.</span><code><strong><a href="../../../../../com/alibaba/mobileim/tribe/IYWTribeService.html#updateTribeSystemMessage(com.alibaba.mobileim.conversation.YWMessage)">updateTribeSystemMessage</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;message)</code>
+<td class="colLast"><span class="strong">IYWTribeService.</span><code><strong><a href="../../../../../com/alibaba/mobileim/tribe/IYWTribeService.html#updateTribeSystemMessage(com.alibaba.mobileim.conversation.YWMessage)">updateTribeSystemMessage</a></strong>(<a href="../../../../../com/alibaba/mobileim/conversation/YWMessage.html" title="class in com.alibaba.mobileim.conversation">YWMessage</a>&nbsp;msg)</code>
 <div class="block">更新群系统消息，使用方式可以参考demo TribeSystemMessageActivity.java</div>
 </td>
 </tr>
