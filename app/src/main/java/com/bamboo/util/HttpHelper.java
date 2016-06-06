@@ -1,4 +1,4 @@
-package com.bamboo.base;
+package com.bamboo.util;
 
 import android.util.Log;
 

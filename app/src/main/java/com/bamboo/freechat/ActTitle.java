@@ -25,6 +25,13 @@ public class ActTitle extends LinearLayout implements View.OnClickListener {
         LayoutInflater.from(context).inflate(R.layout.msg_title, this, true);
         back = (TextView) findViewById(R.id.back);
         title_text = (TextView) findViewById(R.id.title_text);
+        back.setText("<<返回");
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((Activity) getContext()).finish();
+            }
+        });
     }
 
     public void setTitleName(CharSequence s) {

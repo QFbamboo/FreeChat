@@ -11,14 +11,13 @@ import android.widget.Toast;
 
 import com.bamboo.base.BaseActivity;
 import com.bamboo.base.ContentView;
-import com.bamboo.base.LoadPictrue;
 import com.bamboo.base.ViewInject;
 import com.bamboo.common.Dao;
-import com.bamboo.common.Msg;
+import com.bamboo.bean.Msg;
 import com.bamboo.common.Tag;
 import com.bamboo.dialog.DialogView;
 import com.bamboo.util.DateUtil;
-import com.bamboo.util.SPUtil;
+import com.bamboo.util.ImgHelper;
 
 /**
  * Created by bamboo on 16-6-3.
@@ -37,31 +36,35 @@ public class ActMessage extends BaseActivity {
     private Button confirm;
     @ViewInject(R.id.apply_cancel)
     private Button cancel;
+    @ViewInject(R.id.title)
+    private ActTitle title;
 
     private Msg msg;
 
-    private static final String username = SPUtil.getDate("username");
     private static final long oneDayTimes = 24 * 60 * 60 * 1000L;
     private static long currentTimes = System.currentTimeMillis();
     private String sub_date = "";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        title.setTitleName("好友请求");
 
         msg = (Msg) getIntent().getSerializableExtra("msg");
 
         String date = DateUtil.getDateToString(msg.getAdd_time());
 
-        if (msg.getAdd_time() - currentTimes > oneDayTimes) {
-            sub_date = date.substring(9, 14);
+        if (currentTimes - msg.getAdd_time() < oneDayTimes) {
+            sub_date = date.substring(11, date.length());
         } else {
             sub_date = date.substring(9, 14);
         }
 
         applyDate.setText(sub_date);
         textView.setText(msg.getFromUserName());
-        new LoadPictrue(ActMessage.this, msg.getFromAvatar(), imageView);
+//        new LoadPictrue(ActMessage.this, msg.getFromAvatar(), imageView);
+        ImgHelper.setImage(imageView, msg.getFromAvatar());
 
         if (msg.getFlag() == 2) {
             confirm.setText("已允许");
@@ -115,7 +118,7 @@ public class ActMessage extends BaseActivity {
 
                         @Override
                         public void onClick(DialogView dialogView) {
-                            Dao.friendRequest(username, msg.getId(), confirmHandler);
+                            Dao.friendRequest(msg.getId(), confirmHandler);
                         }
                     });
                 }
@@ -126,7 +129,7 @@ public class ActMessage extends BaseActivity {
 
                         @Override
                         public void onClick(DialogView dialogView) {
-                            Dao.friendReject(username, msg.getId(), cancelHandler);
+                            Dao.friendReject(msg.getId(), cancelHandler);
                         }
                     });
                 }

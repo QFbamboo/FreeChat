@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp">
 
-        <ImageView
+        <com.bamboo.view.AvatorView
             android:id="@+id/msgImage"
             android:layout_width="50dp"
             android:layout_height="50dp" />

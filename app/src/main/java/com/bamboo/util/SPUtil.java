@@ -34,7 +34,7 @@ public class SPUtil {
         editor.commit();
     }
 
-    public static String getDate(String key) {
+    public static String getData(String key) {
         String value = spUtil.getString(key, "");
         return value;
     }

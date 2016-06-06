@@ -7,12 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by bamboo on 16-5-31.
  */
 public abstract class MyAdapter<T> extends BaseAdapter {
+
+    private static final List LIST=new ArrayList();
 
     enum TYPE {
         ARRAY, LIST
@@ -22,6 +25,10 @@ public abstract class MyAdapter<T> extends BaseAdapter {
     private Context context;
     private T[] array;
     private List<T> list;
+
+    public MyAdapter(Context context){
+        this(context,LIST);
+    }
 
     public MyAdapter(Context context, T[] array) {
         this.context = context;

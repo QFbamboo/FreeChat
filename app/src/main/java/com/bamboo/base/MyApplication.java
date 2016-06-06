@@ -3,12 +3,11 @@ package com.bamboo.base;
 import android.app.Application;
 import android.content.Context;
 
-import com.alibaba.mobileim.YWAPI;
-import com.alibaba.mobileim.YWIMCore;
-import com.alibaba.mobileim.YWIMKit;
 import com.alibaba.wxlib.util.SysUtil;
+import com.bamboo.util.DbHelper;
 import com.bamboo.util.IMUtil;
 import com.bamboo.util.SPUtil;
+import com.bamboo.util.Toast;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.umeng.openim.OpenIMAgent;
@@ -23,8 +22,8 @@ public class MyApplication extends Application {
 
         appContext = getApplicationContext();
 
-////		DbHelper.init(appContext);
-//        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(appContext));
+        DbHelper.init(appContext);
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(appContext));
         SysUtil.setApplication(MyApplication.appContext);
 //        if (SysUtil.isTCMSServiceProcess(MyApplication.appContext)) {
 //            return;
@@ -35,6 +34,7 @@ public class MyApplication extends Application {
         }
         SPUtil.getSpUtil(appContext);
         IMUtil.init();
+        Toast.init(appContext);
 
     }
 }

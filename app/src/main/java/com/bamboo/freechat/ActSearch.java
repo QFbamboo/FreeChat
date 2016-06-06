@@ -16,6 +16,7 @@ import com.bamboo.base.ViewInject;
 import com.bamboo.bean.User;
 import com.bamboo.common.Dao;
 import com.bamboo.common.Tag;
+import com.bamboo.util.ImgHelper;
 import com.bamboo.util.SPUtil;
 
 /**
@@ -34,7 +35,7 @@ public class ActSearch extends BaseActivity {
     private ActTitle title;
 
     private String queryUser;
-    private final String username = SPUtil.getDate("username");
+    private final String username = SPUtil.getData("username");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,8 @@ public class ActSearch extends BaseActivity {
                 User user = (User) msg.obj;
                 String avatar = user.getAvatar();
                 String username = user.getUsername();
-                new LoadPictrue(ActSearch.this, avatar, imageView);//显示头像
+//                new LoadPictrue(ActSearch.this, avatar, imageView);//显示头像
+                ImgHelper.setImage(imageView, avatar);
                 textView.setText(username);
             }
         }

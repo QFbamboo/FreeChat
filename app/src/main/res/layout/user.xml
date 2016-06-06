@@ -13,12 +13,14 @@
         android:textColor="#7700ff00"
         android:textSize="20sp" />
 
-    <ImageView
+    <com.bamboo.view.AvatorView
         android:id="@+id/userImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:onClick="onClick"/>
 
     <View
         android:layout_width="match_parent"

@@ -36,8 +36,10 @@ public class IMUtil {
             mLoginService = mIMKit.getLoginService();
             mContactService = mIMKit.getContactService();
             mConversationService = mIMKit.getConversationService();
-//            mContactService.setContactProfileCallback(callback);
-//            AdviceBinder.bindAdvice(PointCutEnum.CONVERSATION_FRAGMENT_UI_POINTCUT, ConversationListUICustomSample.class);
+//          mContactService.setContactProfileCallback(callback);
+//          AdviceBinder.bindAdvice(PointCutEnum.CONVERSATION_FRAGMENT_UI_POINTCUT, ConversationListUICustomSample.class);
+            mIMKit.setAppName("畅谈");
+            mIMKit.setResId(android.R.mipmap.sym_def_app_icon);
         }
     }
 

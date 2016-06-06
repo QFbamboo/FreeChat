@@ -1,8 +1,12 @@
-package com.bamboo.common;
+package com.bamboo.bean;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by bamboo on 16-6-3.
@@ -76,5 +80,23 @@ public class Msg implements Serializable {
 
     public long getAdd_time() {
         return add_time;
+    }
+
+    public static Msg getInstence(JSONObject obj) throws JSONException {
+
+        Msg msg = new Msg(obj.getInt("fromuserid"), obj.getInt("flag"),
+                obj.getString("fromusername"), obj.getInt("id"),
+                obj.getString("fromavatar"), obj.getLong("add_time"));
+        return msg;
+    }
+
+    public static List<Msg> getInstence(JSONArray array) throws JSONException {
+        List<Msg> list = new ArrayList<Msg>();
+        for (int i = 0, k = array.length(); i < k; i++) {
+            JSONObject jsonObj = array.getJSONObject(i);
+            Msg msg = Msg.getInstence(jsonObj);
+            list.add(msg);
+        }
+        return list;
     }
 }

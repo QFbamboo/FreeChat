@@ -31,7 +31,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         //判断存入的用户ID信息是否为空，如果不是，则证明之登录，则直接显示聊天界面
-        if (SPUtil.getDate("username") != "") {
+        if (SPUtil.getData("username") != "") {
             startActivity(new Intent(MainActivity.this, ActContent.class));
             finish();
         }

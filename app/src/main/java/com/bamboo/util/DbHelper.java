@@ -1,4 +1,4 @@
-package com.bamboo.database;
+package com.bamboo.util;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -7,6 +7,7 @@ import java.util.Map;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.bamboo.bean.Friend;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
@@ -17,8 +18,8 @@ import com.j256.ormlite.table.TableUtils;
  */
 
 public class DbHelper extends OrmLiteSqliteOpenHelper {
-	// /data/data/[package]/databases/*.db
-    private static final String DATABASE_NAME = "jiangKlina.db";
+    // /data/data/[package]/databases/*.db
+    private static final String DATABASE_NAME = "userfriendlist.db";
 
     private Map<Class, Dao> daos = new HashMap<Class, Dao>();
 
@@ -28,23 +29,22 @@ public class DbHelper extends OrmLiteSqliteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
-//        try {
-//            //
-////            TableUtils.createTable(connectionSource, Manager.class);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        try {
+
+            TableUtils.createTable(connectionSource, Friend.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion) {
-//        try {
-//            TableUtils.dropTable(connectionSource, Manager.class, true);
-//            TableUtils.dropTable(connectionSource, User.class, true);
-//            onCreate(database, connectionSource);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            TableUtils.dropTable(connectionSource, Friend.class, true);
+            onCreate(database, connectionSource);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private static DbHelper instance;
