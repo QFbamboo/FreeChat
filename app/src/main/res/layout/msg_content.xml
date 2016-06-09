@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="8dp">
 
         <com.bamboo.view.AvatorView
             android:id="@+id/msgImage"

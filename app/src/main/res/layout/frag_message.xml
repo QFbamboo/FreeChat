@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/lv_refresh"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <com.jiangKlijna.pulltorefreshswipemenu.swipemenu.SwipeMenuListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/lv_content"
+    <com.bamboo.view.TitleView
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="2dp" />
+        android:layout_height="wrap_content" />
 
-</android.support.v4.widget.SwipeRefreshLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/lv_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.jiangKlijna.pulltorefreshswipemenu.swipemenu.SwipeMenuListView
+            android:id="@+id/lv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="2dp" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>
+
 
 

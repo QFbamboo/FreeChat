@@ -5,11 +5,11 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bamboo.base.BaseFragment;
@@ -19,9 +19,12 @@ import com.bamboo.base.ViewInject;
 import com.bamboo.common.Dao;
 import com.bamboo.bean.Msg;
 import com.bamboo.common.Tag;
+import com.bamboo.dialog.DialogView;
 import com.bamboo.util.DateUtil;
 import com.bamboo.util.ImgHelper;
+import com.bamboo.util.Toast;
 import com.bamboo.view.AvatorView;
+import com.bamboo.view.TitleView;
 import com.jiangKlijna.pulltorefreshswipemenu.swipemenu.SwipeMenu;
 import com.jiangKlijna.pulltorefreshswipemenu.swipemenu.SwipeMenuItem;
 import com.jiangKlijna.pulltorefreshswipemenu.swipemenu.SwipeMenuListView;
@@ -45,7 +48,8 @@ public class FragMessage extends BaseFragment
 
     private List<Msg> list;
     private MyAdapter<Msg> adapter;
-
+    @ViewInject(R.id.title)
+    private TitleView title;
     private static final long oneDayTimes = 24 * 60 * 60 * 1000L;
     private static long currentTimes = System.currentTimeMillis();
     private String sub_time = "";
@@ -53,8 +57,8 @@ public class FragMessage extends BaseFragment
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
+        title.setTitleName("消息列表");
+        title.setGoneBack();
         adapter = new MyAdapter<Msg>(getActivity(), new ArrayList<Msg>()) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -73,9 +77,9 @@ public class FragMessage extends BaseFragment
                 String time_str = DateUtil.getDateToString(time);
 
                 if (currentTimes - time < oneDayTimes) {
-                    sub_time = time_str.substring(11, time_str.length());
+                    sub_time = time_str.substring(11, 16);
                 } else {
-                    sub_time = time_str.substring(9, 14);
+                    sub_time = time_str.substring(0, 10);
                 }
                 if (flag == 0) {
                     show_status.setText(sub_time);
@@ -84,7 +88,6 @@ public class FragMessage extends BaseFragment
                 } else if (flag == 3) {
                     show_status.setText("已拒绝");
                 }
-
                 return holder.getConvertView();
             }
         };
@@ -96,6 +99,9 @@ public class FragMessage extends BaseFragment
         listView.setOnItemClickListener(this);
         //设置下拉刷新的监听
         refresh.setOnRefreshListener(this);
+        refresh.setColorSchemeColors(Tag.RefreshColors);
+        listView.setMenuCreator(this);
+        listView.setOnMenuItemClickListener(this);
     }
 
     //点击列表时，进入ActMessage布局，并把Msg对象（已实现序列化）传过去
@@ -107,15 +113,31 @@ public class FragMessage extends BaseFragment
     }
 
     @Override
-    public void onMenuItemClick(int position, SwipeMenu menu, int index) {
-
+    public void onMenuItemClick(final int position, SwipeMenu menu, int index) {
+//        Toast.showShortToast("fragMessage");
+       DialogView.showDialog(getActivity(), "点击确认后删除此消息", new DialogView.OnClickListener() {
+           @Override
+           public void onClick(DialogView dialogView) {
+               int msgId=adapter.getItem(position).getId();
+               Dao.deleteMessage(msgId,new Handler(){
+                   @Override
+                   public void handleMessage(Message msg) {
+                       if (msg.what==Tag.SUCCESS){
+                           Toast.showShortToast("删除成功");
+                       }else {
+                           Toast.showShortToast("删除失败");
+                       }
+                   }
+               });
+           }
+       });
     }
 
     //单项列表的滑动操作
     @Override
     public void create(SwipeMenu menu, int position) {
         SwipeMenuItem deleteItem = new SwipeMenuItem(getActivity());
-        deleteItem.setWidth(80);
+        deleteItem.setWidth(ImgHelper.dp_px(80));
         deleteItem.setTitle("删除");
         deleteItem.setTitleSize(18);
         deleteItem.setTitleColor(Color.WHITE);

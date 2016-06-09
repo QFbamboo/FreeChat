@@ -111,10 +111,16 @@
 
     </RelativeLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/viewpager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_above="@id/relative1"-->
+        <!--android:visibility="gone"/>-->
+
+    <FrameLayout
+        android:id="@+id/frag_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/relative1" />
-
+        android:layout_above="@id/relative1"/>
 </RelativeLayout>

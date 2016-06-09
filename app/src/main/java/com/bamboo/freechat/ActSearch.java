@@ -1,23 +1,28 @@
 package com.bamboo.freechat;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.bamboo.bean.Friend;
+import com.bamboo.util.Toast;
 import com.bamboo.base.BaseActivity;
 import com.bamboo.base.ContentView;
-import com.bamboo.base.LoadPictrue;
 import com.bamboo.base.ViewInject;
 import com.bamboo.bean.User;
 import com.bamboo.common.Dao;
 import com.bamboo.common.Tag;
 import com.bamboo.util.ImgHelper;
 import com.bamboo.util.SPUtil;
+import com.bamboo.view.AvatorView;
+import com.bamboo.view.TitleView;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by bamboo on 16-6-2.
@@ -28,19 +33,21 @@ public class ActSearch extends BaseActivity {
     @ViewInject(R.id.editText)
     private EditText editText;
     @ViewInject(R.id.search_avatar)
-    private ImageView imageView;
+    private AvatorView imageView;
     @ViewInject(R.id.search_user)
     private TextView textView;
+    @ViewInject(R.id.add_friend)
+    private TextView addFrinend;
     @ViewInject(R.id.title)
-    private ActTitle title;
-
+    private TitleView title;
     private String queryUser;
-    private final String username = SPUtil.getData("username");
+    private Friend friend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         title.setTitleName("查找好友");
+        getFriendInfo();
     }
 
 
@@ -49,11 +56,37 @@ public class ActSearch extends BaseActivity {
         public void handleMessage(Message msg) {
             if (msg.what == Tag.SUCCESS) {
                 User user = (User) msg.obj;
-                String avatar = user.getAvatar();
-                String username = user.getUsername();
-//                new LoadPictrue(ActSearch.this, avatar, imageView);//显示头像
-                ImgHelper.setImage(imageView, avatar);
-                textView.setText(username);
+                ImgHelper.setImage(imageView, user.getAvatar());
+                textView.setText(user.getUsername());
+
+                if (queryUser.equals(SPUtil.getData("username"))) {
+                    addFrinend.setTextColor(0xccaaaaaa);
+                    addFrinend.setBackgroundColor(0x00000000);
+                    addFrinend.setText("当前用户");
+                    addFrinend.setClickable(false);
+                } else {
+                    if (friend != null) {
+                        if (queryUser.equals(friend.getUsername())) {
+                            addFrinend.setText("已添加");
+                            addFrinend.setTextColor(0xccaaaaaa);
+                            addFrinend.setBackgroundColor(0x00000000);
+                            addFrinend.setClickable(false);
+                        } else {
+                            addFrinend.setText("添加");
+                            addFrinend.setBackgroundColor(0xff669999);
+                            addFrinend.setTextColor(0xffffffff);
+                            addFrinend.setClickable(true);
+                        }
+                    } else {
+                        addFrinend.setText("添加");
+                        addFrinend.setBackgroundColor(0xff669999);
+                        addFrinend.setTextColor(0xffffffff);
+                        addFrinend.setClickable(true);
+                    }
+                }
+                addFrinend.setVisibility(View.VISIBLE);
+            } else {
+                Toast.showShortToast("没有此用户");
             }
         }
     };
@@ -64,12 +97,12 @@ public class ActSearch extends BaseActivity {
         public void handleMessage(Message msg) {
             if (msg.what == Tag.SUCCESS) {
                 String message = (String) msg.obj;
-                Toast.makeText(ActSearch.this, message, Toast.LENGTH_SHORT).show();
+                Toast.showShortToast(message);
             } else if (msg.what == Tag.FAILURE) {
                 String message = (String) msg.obj;
-                Toast.makeText(ActSearch.this, message, Toast.LENGTH_SHORT).show();
+                Toast.showShortToast(message);
             } else if (msg.what == Tag.OTHER) {
-                Toast.makeText(ActSearch.this, "请检查网络", Toast.LENGTH_SHORT).show();
+                Toast.showShortToast("请检查网络");
             }
         }
     };
@@ -79,13 +112,24 @@ public class ActSearch extends BaseActivity {
         switch (v.getId()) {
             case R.id.query:
                 queryUser = editText.getText().toString().trim();
-                Dao.getUserInfo(username, queryUser, UserInfohandler);
+                Dao.getUserInfo(SPUtil.getData("username"), queryUser, UserInfohandler);
                 break;
             case R.id.add_friend:
-                Dao.addFriend(username, queryUser, addFriendHandler);
+                Dao.addFriend(queryUser, addFriendHandler);
                 break;
         }
     }
 
+    public void getFriendInfo() {
+        try {
+            List<Friend> list = Friend.getDao().queryForAll();
+            Iterator<Friend> it = list.iterator();
+            while (it.hasNext()) {
+                friend = it.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

@@ -2,10 +2,10 @@ package com.bamboo.freechat;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,6 +23,7 @@ import com.bamboo.util.IntentUtil;
 import com.bamboo.util.SPUtil;
 import com.bamboo.util.Toast;
 import com.bamboo.view.AvatorView;
+import com.bamboo.view.TitleView;
 
 import java.io.File;
 
@@ -30,7 +31,8 @@ import java.io.File;
  * Created by bamboo on 16-6-1.
  */
 @ContentView(R.layout.user)
-public class FragUser extends BaseFragment {
+public class FragUser extends BaseFragment
+        implements SwipeRefreshLayout.OnRefreshListener {
 
     public static final int REQUEST_PIC = 0XF;
     public static final int CROP_PIC = 0XA;
@@ -39,26 +41,29 @@ public class FragUser extends BaseFragment {
     private AvatorView userImage;
     @ViewInject(R.id.userName)
     private TextView userName;
+    @ViewInject(R.id.title)
+    private TitleView title;
 
     private String avatar_path = SPUtil.getData("avatar");
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        title.setTitleName("用户信息");
+        title.setGoneBack();
         String username = SPUtil.getData("username");
-//        new LoadPictrue(getActivity(), avatar_path, userImage);//显示头像
         ImgHelper.setImage(userImage, avatar_path);
         userName.setText(username);//显示用户名
 
     }
 
-    Handler handler = new Handler() {
+    private final Handler exitHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == Tag.SUCCESS) {
-                SPUtil.clearData();
                 try {
+
+                    SPUtil.clearData();
                     //清空本地好友数据
                     Friend.getDao().delete(Friend.getDao().queryForAll());
                 } catch (Exception e) {
@@ -78,11 +83,11 @@ public class FragUser extends BaseFragment {
                 DialogView.showDialog(getActivity(), "点击确定退出应用！", new DialogView.OnClickListener() {
                     @Override
                     public void onClick(DialogView dialogView) {
-                        IMUtil.logOut(handler);
+                        IMUtil.logOut(exitHandler);
                     }
                 });
                 break;
-            case R.id.search_info:
+            case R.id.search_user:
                 startActivity(new Intent(getActivity(), ActSearch.class));
                 break;
             case R.id.userImage:
@@ -128,4 +133,8 @@ public class FragUser extends BaseFragment {
         }
     }
 
+    @Override
+    public void onRefresh() {
+
+    }
 }

@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.bamboo.util.Toast;
 
 import com.bamboo.base.BaseActivity;
 import com.bamboo.base.ContentView;
@@ -18,6 +19,7 @@ import com.bamboo.common.Tag;
 import com.bamboo.dialog.DialogView;
 import com.bamboo.util.DateUtil;
 import com.bamboo.util.ImgHelper;
+import com.bamboo.view.TitleView;
 
 /**
  * Created by bamboo on 16-6-3.
@@ -37,7 +39,7 @@ public class ActMessage extends BaseActivity {
     @ViewInject(R.id.apply_cancel)
     private Button cancel;
     @ViewInject(R.id.title)
-    private ActTitle title;
+    private TitleView title;
 
     private Msg msg;
 
@@ -56,9 +58,9 @@ public class ActMessage extends BaseActivity {
         String date = DateUtil.getDateToString(msg.getAdd_time());
 
         if (currentTimes - msg.getAdd_time() < oneDayTimes) {
-            sub_date = date.substring(11, date.length());
+            sub_date = date.substring(11, 16);
         } else {
-            sub_date = date.substring(9, 14);
+            sub_date = date.substring(0, 10);
         }
 
         applyDate.setText(sub_date);
@@ -81,14 +83,13 @@ public class ActMessage extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == Tag.SUCCESS) {
-                Toast.makeText(ActMessage.this, "已接受好友请求", Toast.LENGTH_SHORT).show();
+                Toast.showShortToast("已接受好友请求");
                 confirm.setText("已允许");
+                Dao.getFriendList(null);
                 confirm.setClickable(false);
                 cancel.setClickable(false);
             } else if (msg.what == Tag.FAILURE) {
-                Toast.makeText(ActMessage.this, "接受好友请求失败", Toast.LENGTH_SHORT).show();
-            } else if (msg.what == Tag.OTHER) {
-                Toast.makeText(ActMessage.this, "请检查网络", Toast.LENGTH_SHORT).show();
+                Toast.showShortToast("请检查网络");
             }
         }
     };
@@ -97,14 +98,12 @@ public class ActMessage extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == Tag.SUCCESS) {
-                Toast.makeText(ActMessage.this, "已接受好友请求", Toast.LENGTH_SHORT).show();
-                cancel.setText("已允许");
+                Toast.showShortToast("已拒绝好友请求");
+                cancel.setText("已拒绝");
                 confirm.setClickable(false);
                 cancel.setClickable(false);
             } else if (msg.what == Tag.FAILURE) {
-                Toast.makeText(ActMessage.this, "接受好友请求失败", Toast.LENGTH_SHORT).show();
-            } else if (msg.what == Tag.OTHER) {
-                Toast.makeText(ActMessage.this, "请检查网络", Toast.LENGTH_SHORT).show();
+                Toast.showShortToast("请检查网络");
             }
         }
     };

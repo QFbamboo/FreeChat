@@ -6,8 +6,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.bamboo.util.Toast;
 import com.bamboo.base.BaseActivity;
 import com.bamboo.base.ContentView;
 import com.bamboo.base.ViewInject;
@@ -24,7 +24,6 @@ public class MainActivity extends BaseActivity {
     private EditText account;
     @ViewInject(R.id.passwd)
     private EditText passwd;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +46,13 @@ public class MainActivity extends BaseActivity {
                 SPUtil.setUser(user);//把用户信息保存到本地
                 //登录成功之后跳转到聊天界面
                 startActivity(new Intent(MainActivity.this, ActContent.class));
+                finish();
             } else if (msg.what == Tag.FAILURE) {
-                Toast.makeText(MainActivity.this, "用户名或密码错误",
-                        Toast.LENGTH_SHORT).show();
+                Toast.showShortToast("用户名或密码错误");
             } else if (msg.what == Tag.OTHER) {
-                Toast.makeText(MainActivity.this, "请检查网络！",
-                        Toast.LENGTH_SHORT).show();
+                Toast.showShortToast("请检查网络");
+//                Toast.makeText(MainActivity.this, "请检查网络！",
+//                        Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -61,11 +61,11 @@ public class MainActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login:
+
                 final String userId = account.getText().toString().trim();
                 final String password = passwd.getText().toString().trim();
                 if (userId.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(MainActivity.this,
-                            "用户名或密码不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.showShortToast("用户名或密码不能为空");
                 } else {
                     IMUtil.login(userId, password, new Handler() {
                         @Override
@@ -73,8 +73,7 @@ public class MainActivity extends BaseActivity {
                             if (msg.what == Tag.SUCCESS) {
                                 Dao.getUserInfo(userId, userId, userInfoHandler);
                             } else if (msg.what == Tag.FAILURE) {
-                                Toast.makeText(MainActivity.this, "请检查有盟",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.showShortToast("请检查有盟");
                             }
                         }
                     });

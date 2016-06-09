@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textVew2"
             android:layout_toRightOf="@+id/textVew2"
+            android:inputType="textPassword"
             android:background="#0000" />
 
     </RelativeLayout>

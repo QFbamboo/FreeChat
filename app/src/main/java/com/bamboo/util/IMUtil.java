@@ -12,6 +12,7 @@ import com.alibaba.mobileim.contact.IYWContactService;
 import com.alibaba.mobileim.conversation.IYWConversationListener;
 import com.alibaba.mobileim.conversation.IYWConversationService;
 import com.bamboo.common.Tag;
+import com.bamboo.freechat.R;
 
 /**
  * Created by caojiang on 2/24/2016.
@@ -39,7 +40,7 @@ public class IMUtil {
 //          mContactService.setContactProfileCallback(callback);
 //          AdviceBinder.bindAdvice(PointCutEnum.CONVERSATION_FRAGMENT_UI_POINTCUT, ConversationListUICustomSample.class);
             mIMKit.setAppName("畅谈");
-            mIMKit.setResId(android.R.mipmap.sym_def_app_icon);
+            mIMKit.setResId(R.mipmap.freechat);
         }
     }
 

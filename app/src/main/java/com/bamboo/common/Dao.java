@@ -93,9 +93,9 @@ public class Dao {
     }
 
     //提供自己的用户名，以及查询到的用名，然后发送添加好友的消息
-    public static void addFriend(String selfUsername, String toUsername, final Handler handler) {
+    public static void addFriend(String toUsername, final Handler handler) {
         RequestParams rp = new RequestParams();
-        rp.put("selfUsername", selfUsername);
+        rp.put("selfUsername", SPUtil.getData("username"));
         rp.put("toUsername", toUsername);
         HttpHelper.post(Url.ADD_FRIEND, rp, new TextHttpResponseHandler() {
 
@@ -166,21 +166,22 @@ public class Dao {
             @Override
             public void onSuccess(int i, Header[] headers, String s) {
                 try {
-                    Result result = new Result(s);
-                    if (result.status == 1) {
+                    JSONObject jsonObject = new JSONObject(s);
+                    int status = jsonObject.getInt("status");
+                    if (status == 1) {
                         handler.obtainMessage(Tag.SUCCESS).sendToTarget();
-                    } else if (result.status == 0) {
+                    } else if (status == 0) {
                         handler.obtainMessage(Tag.FAILURE).sendToTarget();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    handler.obtainMessage(Tag.OTHER).sendToTarget();
+                    handler.obtainMessage(Tag.FAILURE).sendToTarget();
                 }
             }
 
             @Override
             public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
-                handler.obtainMessage(Tag.OTHER).sendToTarget();
+                handler.obtainMessage(Tag.FAILURE).sendToTarget();
             }
         });
     }
@@ -195,15 +196,16 @@ public class Dao {
             @Override
             public void onSuccess(int i, Header[] headers, String s) {
                 try {
-                    Result result = new Result(s);
-                    if (result.status == 1) {
+                    JSONObject jsonObject = new JSONObject(s);
+                    int status = jsonObject.getInt("status");
+                    if (status == 1) {
                         handler.obtainMessage(Tag.SUCCESS).sendToTarget();
-                    } else if (result.status == 0) {
+                    } else if (status == 0) {
                         handler.obtainMessage(Tag.FAILURE).sendToTarget();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    handler.obtainMessage(Tag.OTHER).sendToTarget();
+                    handler.obtainMessage(Tag.FAILURE).sendToTarget();
                 }
             }
 
@@ -233,14 +235,20 @@ public class Dao {
                         for (Friend friend : list) {
                             dao.createOrUpdate(friend);
                         }
-                        handler.obtainMessage(Tag.SUCCESS, list).sendToTarget();
+                        if (handler != null) {
+                            handler.obtainMessage(Tag.SUCCESS, list).sendToTarget();
+                        }
                     } else {
-                        handler.obtainMessage(Tag.FAILURE).sendToTarget();
+                        if (handler != null) {
+                            handler.obtainMessage(Tag.FAILURE).sendToTarget();
+                        }
                     }
 
                 } catch (Exception e) {
                     e.printStackTrace();
-                    handler.obtainMessage(Tag.FAILURE).sendToTarget();
+                    if (handler != null) {
+                        handler.obtainMessage(Tag.FAILURE).sendToTarget();
+                    }
                 }
             }
 
@@ -283,12 +291,12 @@ public class Dao {
 
             @Override
             public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
-
+                handler.obtainMessage(Tag.FAILURE).sendToTarget();
             }
 
             @Override
             public void onSuccess(int i, Header[] headers, String s) {
-
+                handler.obtainMessage(Tag.SUCCESS).sendToTarget();
             }
         });
     }
@@ -354,7 +362,7 @@ public class Dao {
     }
 
     //删除消息操作
-    public static void deleteMessage(String msgID, final Handler handler) {
+    public static void deleteMessage(int msgID, final Handler handler) {
         RequestParams rp = new RequestParams();
         rp.put("username", SPUtil.getData("username"));
         rp.put("msgID", msgID);

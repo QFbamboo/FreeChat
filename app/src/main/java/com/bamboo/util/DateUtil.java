@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by bamboo on 16-6-3.
  */
 public class DateUtil {
-    private static SimpleDateFormat sf = new SimpleDateFormat("yyyy年MM月dd日HH时mm分");
+    private static SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd-HH:mm");
 
     //获取当前系统时间 格式为："yyyy/MM//dd"
     public static String getCurrentDate() {

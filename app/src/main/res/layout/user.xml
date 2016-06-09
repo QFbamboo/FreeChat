@@ -4,27 +4,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <com.bamboo.view.TitleView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="50dp"
-        android:textColor="#7700ff00"
+        android:layout_margin="30dp"
+        android:textColor="#ff669999"
         android:textSize="20sp" />
 
     <com.bamboo.view.AvatorView
         android:id="@+id/userImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:clickable="true"
-        android:onClick="onClick"/>
+        android:onClick="onClick" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="3dp"
         android:background="#00ff00" />
 
     <Button
@@ -32,21 +37,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/button_round"
         android:onClick="onClick"
         android:padding="10dp"
         android:text="退出当前登录"
         android:textColor="#ffff" />
 
-    <TextView
-        android:id="@+id/search_info"
-        android:layout_width="100dp"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:gravity="center"
-        android:onClick="onClick"
-        android:text="查找用户"
-        android:textSize="20sp" />
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="18dp"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/search_user"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:background="@drawable/trans"
+            android:onClick="onClick"
+            android:src="@mipmap/search_user" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="查找用户"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
 </LinearLayout>

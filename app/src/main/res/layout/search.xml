@@ -4,15 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.bamboo.freechat.ActTitle
+    <com.bamboo.view.TitleView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#aaa" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,13 +24,14 @@
             android:padding="5dp"
             android:singleLine="true" />
 
-        <Button
+        <ImageView
             android:id="@+id/query"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@mipmap/query"
+            android:background="@drawable/trans"
+            android:src="@mipmap/query"
             android:onClick="onClick" />
     </RelativeLayout>
 
@@ -47,35 +43,43 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
 
-        <ImageView
+        <com.bamboo.view.AvatorView
             android:id="@+id/search_avatar"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp" />
 
         <TextView
             android:id="@+id/search_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/search_avatar"
-            android:padding="12dp"
+            android:padding="10dp"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/add_friend"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@mipmap/addfriend"
             android:clickable="true"
-            android:onClick="onClick" />
+            android:gravity="center"
+            android:onClick="onClick"
+            android:padding="10dp"
+            android:textSize="15sp" />
     </RelativeLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#aaa"
+        android:visibility="gone" />
 
 </LinearLayout>

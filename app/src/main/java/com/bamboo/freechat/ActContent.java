@@ -2,34 +2,31 @@ package com.bamboo.freechat;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bamboo.base.BaseActivity;
 import com.bamboo.base.BaseFragment;
 import com.bamboo.base.ContentView;
 import com.bamboo.base.ViewInject;
+import com.bamboo.common.FM;
 import com.bamboo.util.ImgHelper;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.bamboo.util.Toast;
 
 /**
  * Created by bamboo on 16-5-30.
  */
 
 @ContentView(R.layout.act_content)
-public class ActContent extends BaseActivity implements ViewPager.OnPageChangeListener {
+public class ActContent extends BaseActivity{
 
     private static final int minSize = ImgHelper.dp_px(38);
     private static final int maxSize = ImgHelper.dp_px(50);
-    @ViewInject(R.id.viewpager)
-    private ViewPager MyPager;
+//    @ViewInject(R.id.viewpager)
+//    private ViewPager MyPager;
     @ViewInject(R.id.tvChat)
     private TextView chat;
     @ViewInject(R.id.tvMsg)
@@ -44,88 +41,88 @@ public class ActContent extends BaseActivity implements ViewPager.OnPageChangeLi
     @ViewInject(R.id.viewImage3)
     private ImageView pager3;
 
-    private List<BaseFragment> fragmentList = new ArrayList<BaseFragment>();
+    //    private List<BaseFragment> fragmentList = new ArrayList<>();
+    private FM fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         InitViewPager();
-        MyPager.setOnPageChangeListener(this);
+
     }
 
     //初始化viewPager
     public void InitViewPager() {
-        fragmentList.add(new FragFriendChat());
-        fragmentList.add(new FragMessage());
-        fragmentList.add(new FragUser());
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-        MyPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        fm = new FM(this, R.id.frag_content, FragFriendChat.class,
+                FragMessage.class, FragUser.class);
+        setCurrentItem(0);
 
-            @Override
-            public int getCount() {
-                return fragmentList.size();
-            }
-
-            @Override
-            public Fragment getItem(int arg0) {
-                return fragmentList.get(arg0);
-            }
-
-        });
-        MyPager.setCurrentItem(0);
+ //        MyPager.setOnPageChangeListener(this);
+//        fragmentList.add(new FragFriendChat());
+//        fragmentList.add(new FragMessage());
+//        fragmentList.add(new FragUser());
+////        FragmentManager fragmentManager = getSupportFragmentManager();
+//        MyPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+//
+//            @Override
+//            public int getCount() {
+//                return fragmentList.size();
+//            }
+//
+//            @Override
+//            public Fragment getItem(int arg0) {
+//                return fragmentList.get(arg0);
+//            }
+//
+//        });
+//        MyPager.setCurrentItem(0);
     }
+
 
     @Override
     public void onClick(View v) {
-        for (BaseFragment fragment : fragmentList) {
-            fragment.onClick(v);
+        for (Fragment fragment : fm.fragments) {
+            ((BaseFragment)fragment).onClick(v);
         }
         switch (v.getId()) {
             case R.id.viewImage1:
-                MyPager.setCurrentItem(0);
+            case R.id.tvChat:
+                setCurrentItem(0);
                 break;
             case R.id.viewImage2:
-                MyPager.setCurrentItem(1);
+            case R.id.tvMsg:
+                setCurrentItem(1);
                 break;
             case R.id.viewImage3:
-                MyPager.setCurrentItem(2);
+            case R.id.tvUser:
+                setCurrentItem(2);
+                break;
         }
     }
 
     private long firstClick = 0;
 
+    //重写返回键的方法
     @Override
-    public void onBackPressed() {//重写返回键的方法
+    public void onBackPressed() {
         if (firstClick == 0) {
-            Toast.makeText(ActContent.this, "再按一次确认退出",
-                    Toast.LENGTH_SHORT).show();
+            Toast.showShortToast("再按一次确认退出");
             firstClick = System.currentTimeMillis();
         } else {
             long secondClick = System.currentTimeMillis();
             if (secondClick - firstClick < 1000) {
                 finish();
             } else {
-                Toast.makeText(ActContent.this, "再按一次确认退出",
-                        Toast.LENGTH_SHORT).show();
+                Toast.showShortToast("再按一次确认退出");
                 firstClick = 0;
             }
         }
     }
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-        if (MyPager.getCurrentItem() == 0) {
+    public void setCurrentItem(int i) {
+        fm.selectTab(i);
+        if (i == 0) {
             chat.setTextColor(0x88ff00ff);
             msg.setTextColor(0xff000000);
             user.setTextColor(0xff000000);
@@ -145,7 +142,7 @@ public class ActContent extends BaseActivity implements ViewPager.OnPageChangeLi
             params3.width = minSize;
             pager3.setLayoutParams(params3);
 
-        } else if (MyPager.getCurrentItem() == 1) {
+        } else if (i == 1) {
             msg.setTextColor(0x88ff00ff);
             chat.setTextColor(0xff000000);
             user.setTextColor(0xff000000);
@@ -164,7 +161,7 @@ public class ActContent extends BaseActivity implements ViewPager.OnPageChangeLi
             params3.height = minSize;
             params3.width = minSize;
             pager3.setLayoutParams(params3);
-        } else if (MyPager.getCurrentItem() == 2) {
+        } else if (i == 2) {
             user.setTextColor(0x88ff00ff);
             chat.setTextColor(0xff000000);
             msg.setTextColor(0xff000000);

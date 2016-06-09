@@ -6,7 +6,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.bamboo.util.Toast;
 
 import com.bamboo.base.BaseActivity;
 import com.bamboo.base.ContentView;
@@ -36,7 +37,6 @@ public class ActRegister extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
     }
 
     @Override
@@ -49,27 +49,17 @@ public class ActRegister extends BaseActivity {
         }
     }
 
-    Handler handler = new Handler() {
+    private final Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == Tag.SUCCESS) {
-
-                Toast.makeText(ActRegister.this, "注册成功！",
-                        Toast.LENGTH_LONG).show();
-
-                DialogView.showDialog(ActRegister.this, "点击确认可进行登录", new DialogView.OnClickListener() {
-                    @Override
-                    public void onClick(DialogView dialogView) {
-                        startActivity(new Intent(ActRegister.this, MainActivity.class));
-                    }
-                });
-
+                Toast.showShortToast("注册成功");
+                startActivity(new Intent(ActRegister.this, MainActivity.class));
+                finish();
             } else if (msg.what == Tag.FAILURE) {
-                Toast.makeText(ActRegister.this, "用户已存在",
-                        Toast.LENGTH_LONG).show();
+                Toast.showShortToast("用户已存在");
             } else if (msg.what == Tag.OTHER) {
-                Toast.makeText(ActRegister.this, "请检查网络",
-                        Toast.LENGTH_LONG).show();
+                Toast.showShortToast("请检查网络");
             }
         }
     };
@@ -79,17 +69,13 @@ public class ActRegister extends BaseActivity {
         password = passwd.getText().toString().trim();
         SurePassword = surePasswd.getText().toString().trim();
         if (password.isEmpty() || SurePassword.isEmpty() || accountName.isEmpty()) {
-            Toast.makeText(this, "用户名或密码不能为空",
-                    Toast.LENGTH_SHORT).show();
+            Toast.showShortToast("用户名或密码不能为空");
+        } else if (!password.equals(SurePassword)) {
+            Toast.showShortToast("两次密码不同,请重新输入！");
+            passwd.setText("");
+            surePasswd.setText("");
         } else {
-            if (password.equals(SurePassword)) {
-                Dao.userRegister(accountName, password, handler);
-            } else {
-                Toast.makeText(this, "两次密码不同,请重新输入！",
-                        Toast.LENGTH_SHORT).show();
-                passwd.setText("");
-                surePasswd.setText("");
-            }
+            Dao.userRegister(accountName, password, handler);
         }
     }
 }

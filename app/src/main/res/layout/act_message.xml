@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.bamboo.freechat.ActTitle
+    <com.bamboo.view.TitleView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -46,44 +46,59 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/apply_date"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="end">
 
-        <TextView
-            android:id="@+id/apply_date"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="20dp" />
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/apply_cancel"
-            android:layout_width="190dp"
+            <Button
+                android:id="@+id/apply_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/button_round"
+                android:onClick="onClick"
+                android:padding="8dp"
+                android:text="拒绝"
+                android:textColor="#ffff"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/button_round"
-            android:onClick="onClick"
-            android:padding="15dp"
-            android:text="拒绝"
-            android:textColor="#ffff"
-            android:textSize="20sp" />
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/apply_confirm"
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/button_round"
-            android:onClick="onClick"
-            android:padding="15dp"
-            android:text="允许"
-            android:textColor="#ffff"
-            android:textSize="20sp" />
+            <Button
+                android:id="@+id/apply_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/button_round"
+                android:onClick="onClick"
+                android:padding="8dp"
+                android:text="允许"
+                android:textColor="#ffff"
+                android:textSize="20sp" />
+        </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

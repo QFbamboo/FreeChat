@@ -1,5 +1,7 @@
 package com.bamboo.freechat;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -7,24 +9,26 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.mobileim.conversation.IYWConversationListener;
 import com.alibaba.mobileim.conversation.YWConversation;
-import com.alibaba.mobileim.lib.presenter.conversation.Conversation;
 import com.bamboo.base.BaseFragment;
 import com.bamboo.base.ContentView;
-import com.bamboo.util.DateUtil;
-import com.bamboo.util.ImgHelper;
 import com.bamboo.base.MyAdapter;
 import com.bamboo.base.ViewInject;
-import com.bamboo.common.Dao;
 import com.bamboo.bean.Friend;
+import com.bamboo.common.Dao;
 import com.bamboo.common.Tag;
+import com.bamboo.dialog.DialogView;
+import com.bamboo.util.DateUtil;
 import com.bamboo.util.IMUtil;
+import com.bamboo.util.ImgHelper;
+import com.bamboo.util.Toast;
 import com.bamboo.view.AvatorView;
+import com.bamboo.view.TitleView;
 import com.jiangKlijna.pulltorefreshswipemenu.swipemenu.SwipeMenu;
+import com.jiangKlijna.pulltorefreshswipemenu.swipemenu.SwipeMenuItem;
 import com.jiangKlijna.pulltorefreshswipemenu.swipemenu.SwipeMenuListView;
 
 import java.util.List;
@@ -42,21 +46,36 @@ public class FragFriendChat extends BaseFragment
     private SwipeMenuListView listView;
     @ViewInject(R.id.lv_refresh)
     private SwipeRefreshLayout refresh;
-
+    @ViewInject(R.id.title)
+    private TitleView title;
     private List<Friend> lists;
     private MyAdapter<Friend> adapter;
+    //    = 0000000000000L
 
-    private long times = 0000000000000L;
     private static final long oneDayTimes = 24 * 60 * 60 * 1000L;
     private static long currentTimes = System.currentTimeMillis();
-    private String sub_date = "";
-
+    private long times = System.currentTimeMillis();
 
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        title.setTitleName("朋友会话");
+        title.setGoneBack();
 
 
+        initAdapter();
+        onRefresh();
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(this);
+        refresh.setOnRefreshListener(this);
+        refresh.setColorSchemeColors(Tag.RefreshColors);
+        IMUtil.AddIYWConversationServiceListener(this);
+        listView.setMenuCreator(this);
+        listView.setOnMenuItemClickListener(this);
+    }
+
+    public void initAdapter() {
         adapter = new MyAdapter<Friend>(getActivity()) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -76,19 +95,22 @@ public class FragFriendChat extends BaseFragment
                     content.setText(lastContent);
                     times = conversation.getLatestTimeInMillisecond();
                     if (currentTimes - times < oneDayTimes) {
-                        msgDate.setText(DateUtil.getDateToString(times).substring(11, 17));
+                        msgDate.setText(DateUtil.getDateToString(times).substring(11, 16));
                     } else {
-                        msgDate.setText(DateUtil.getDateToString(times).substring(9, 14));
+                        msgDate.setText(DateUtil.getDateToString(times).substring(0, 10));
                     }
 
                     int unread = conversation.getUnreadCount();
                     if (unread != 0) {
                         msg.setText("" + unread);
-                        msg.setVisibility(view.VISIBLE);
+                        msg.setVisibility(View.VISIBLE);
                     } else {
                         msg.setVisibility(View.GONE);
                     }
 
+                } else {
+                    msgDate.setText(DateUtil.getDateToString(times).substring(11, 16));
+                    content.setText("");
                 }
 
                 String avatar_path = friend.getAvatar();
@@ -98,34 +120,63 @@ public class FragFriendChat extends BaseFragment
                 return holder.getConvertView();
             }
         };
-        onRefresh();
         lists = Friend.getInstances();
         adapter.setData(lists);
+    }
 
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(this);
-        refresh.setOnRefreshListener(this);
-        refresh.setColorSchemeColors(Tag.RefreshColors);
-        IMUtil.AddIYWConversationServiceListener(this);
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        IMUtil.RemoveIYWConversationServiceListener(this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Friend friends = adapter.getItem(position);
         IMUtil.startChatAct(getActivity(), friends.getUsername());
-//        startActivity(new Intent(getActivity(), ActChartRoom.class).putExtra("friends", friends));
     }
 
     @Override
-    public void onMenuItemClick(int position, SwipeMenu menu, int index) {
+    public void onMenuItemClick(final int position, SwipeMenu menu, int index) {
+//        Toast.showShortToast("fragFriend");
+        DialogView.showDialog(getActivity(), "点击确认后删除此好友", new DialogView.OnClickListener() {
+            @Override
+            public void onClick(DialogView dialogView) {
+                final Friend friend = adapter.getItem(position);
+                final String friendName = friend.getUsername();
+                Dao.deleteFriend(friendName, new Handler() {
+                    @Override
+                    public void handleMessage(Message msg) {
+                        if (msg.what == Tag.SUCCESS) {
+                            try {
+                                Friend.getDao().delete(friend);
+                                Toast.showShortToast("刪除好友成功");
 
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                Toast.showShortToast("刪除好友失敗");
+                            }
+                        } else {
+                            Toast.showShortToast("刪除好友失敗");
+                        }
+                    }
+                });
+            }
+        });
     }
 
     @Override
     public void create(SwipeMenu menu, int position) {
-
+        SwipeMenuItem deleteItem = new SwipeMenuItem(getActivity());
+        deleteItem.setWidth(ImgHelper.dp_px(80));
+        deleteItem.setTitle("删除");
+        deleteItem.setTitleSize(18);
+        deleteItem.setTitleColor(Color.WHITE);
+        deleteItem.setBackground(new ColorDrawable(0xFFF93F25));
+        menu.addMenuItem(deleteItem);
     }
 
+    //下拉刷新
     @Override
     public void onRefresh() {
         Dao.getFriendList(new Handler() {
